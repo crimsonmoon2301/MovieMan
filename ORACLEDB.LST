@@ -1,0 +1,156 @@
+drop user kursadarbs cascade
+
+
+create user kursadarbs identified by artis
+       default tablespace users              
+       quota 50m on users                    
+       temporary tablespace temp;            
+
+ grant create session, create table, create sequence, create trigger to kursadarbs;
+
+ create table Movies(id_movie number(4) primary key,
+   director varchar2(50) constraint a_artist not null,
+   name varchar2(50) constraint a_name not null,
+   price number(4,2) constraint a_price check (price >= 0),
+   origin_of_creation varchar2(50));
+
+ create table Movie_type(id_movietype number(4) primary key,
+   release_year number(4) constraint at_release_year not null,
+   genre varchar2(20),
+   id_movie number(4),
+   duration number(5) constraint at_duration check (duration > 0),  
+   format varchar2 (20) constraint at_format check (format in ('DVD-R', 'Blu-ray', 'VHS', 'Digital')),
+   constraint fk_movie_product foreign key(id_movie) references Movies(id_movie)); 
+
+ create table Customers(id_customer number(4) primary key,
+   name varchar2(30) constraint c_name not null,
+   surname varchar2(40) constraint c_surname not null,
+   email varchar2(50) constraint c_email_uniq UNIQUE,
+   phone varchar2(20) constraint c_phone_uniq UNIQUE check(length(phone)>= 5));
+
+
+ create table Employees (id_employee number(4) primary key,
+  name varchar2(30) constraint e_name not null,
+  surname varchar2(40) constraint e_surname not null,
+  position varchar2(45),
+  hire_date date,
+  salary number(6,2) constraint e_salary check (salary >= 0),
+  manager_id constraint e_managerid null,
+  CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES Employees(id_employee));
+
+ create table Transactions(id_transactions number(4) primary key,
+   purchase_date date constraint p_purchase_date not null,
+   id_customer number(4),
+   id_employee number(4),
+   constraint fk_purchase_customer foreign key (id_customer) references Customers(id_customer),
+   constraint fk_purchase_customer_employee foreign key (id_employee) references Employees(id_employee));
+
+ create table Transact_Details(id_details number(4) primary key,
+   id_transactions number(4),
+   id_movie number(4),
+   quantity number(4) constraint pd_quantity not null
+   constraint pd_quantity_count check (quantity > 0), 
+   constraint fk_details_purch foreign key (id_transactions) references Transactions(id_transactions),
+   constraint fk_details_product foreign key (id_movie) references Movies(id_movie));
+
+ create sequence seq_id_movie start with 1 increment by 1;
+
+ create sequence seq_id_movietype start with 1 increment by 1;
+
+ create sequence seq_id_customer start with 1 increment by 1;
+
+ create sequence seq_id_employee start with 1 increment by 1;
+
+ create sequence seq_id_transactions start with 1 increment by 1;
+
+ create sequence seq_id_transact_details start with 1 increment by 1;
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (1, 'Kamil', 'Kamilowski', 'Co-Founder', to_date('04.07.2019', 'DD.MM.YYYY'), 2800, NULL);
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (2, 'Tom', 'Smith', 'Manager', to_date('01.01.2020', 'DD.MM.YYYY'), 3000, 1);
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (3, 'Carlos', 'Martinez', 'Assistant', to_date('11.11.2022', 'DD.MM.YYYY'), 1800, 2);
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (4, 'Liam', 'OConnor', 'Clerk', to_date('20.03.2023', 'DD.MM.YYYY'), 1500, 3);
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (5, 'Emma', 'Thompson', 'HR', to_date('18.04.2020', 'DD.MM.YYYY'), 2200, 2);
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (6, 'Raj', 'Singh', 'Sales', to_date('03.03.2022', 'DD.MM.YYYY'), 1900, 5);
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (7, 'Fatima', 'Al-Mansour', 'Assistant', to_date('12.05.2022', 'DD.MM.YYYY'), 1600, 6);
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (8, 'John', 'Doe', 'Staff', to_date('15.02.2021', 'DD.MM.YYYY'), 2000, 7);
+
+insert into Employees (id_employee, name, surname, position, hire_date, salary, manager_id)
+values (9, 'Elena', 'Vega', 'Manager', to_date('22.07.2018', 'DD.MM.YYYY'), 3200, 1);
+
+insert into Movies (id_movie, director, name, price, origin_of_creation)
+values (1, 'George Lucas', 'Star Wars', 19.99, 'USA');
+insert into Movie_type (id_movietype, release_year, genre, id_movie, duration, format)
+values (1, 1977, 'Sci-Fi', 1, 148, 'Blu-ray');
+insert into Customers (id_customer, name, surname, email, phone)
+values (1, 'Theresa', 'Smith', 'erwinlandau3@outlook.com', '+1 28132515734');
+insert into Transactions (id_transactions, purchase_date, id_customer, id_employee)
+values (1, to_date('07.01.2020', 'DD.MM.YYYY'), 1, 1);
+insert into Transact_Details (id_details, id_transactions, id_movie, quantity)
+values (1, 1, 1, 2);
+
+insert into Movies (id_movie, director, name, price, origin_of_creation)
+values (2, 'Quentin Tarantino', 'Pulp Fiction', 15.99, 'USA');
+insert into Movie_type (id_movietype, release_year, genre, id_movie, duration, format)
+values (2, 1994, 'Crime', 2, 154, 'DVD-R');
+insert into Customers (id_customer, name, surname, email, phone)
+values (2, 'Maria', 'Garcia', 'maria.garcia@hotmail.com', '+34 612345678');
+insert into Transactions (id_transactions, purchase_date, id_customer, id_employee)
+values (2, to_date('15.09.2024', 'DD.MM.YYYY'), 2, 2);
+insert into Transact_Details (id_details, id_transactions, id_movie, quantity)
+values (2, 2, 2, 1);
+
+insert into Movies (id_movie, director, name, price, origin_of_creation)
+values (3, 'Ridley Scott', 'Gladiator', 18.99, 'UK');
+insert into Movie_type (id_movietype, release_year, genre, id_movie, duration, format)
+values (3, 2000, 'Action', 3, 155, 'Digital');
+insert into Customers (id_customer, name, surname, email, phone)
+values (3, 'Hannah', 'Taylor', 'hannah.taylor@gmail.com', '+44 7911122233');
+insert into Transactions (id_transactions, purchase_date, id_customer, id_employee)
+values (3, to_date('22.09.2024', 'DD.MM.YYYY'), 3, 3);
+insert into Transact_Details (id_details, id_transactions, id_movie, quantity)
+values (3, 3, 3, 1);
+
+insert into Movies (id_movie, director, name, price, origin_of_creation)
+values (4, 'Hayao Miyazaki', 'Spirited Away', 15.99, 'Japan');
+insert into Movie_type (id_movietype, release_year, genre, id_movie, duration, format)
+values (4, 2001, 'Animation', 4, 125, 'Blu-ray');
+insert into Customers (id_customer, name, surname, email, phone)
+values (4, 'Alex', 'Johnson', 'alex.johnson@gmail.com', '+1 2025550123');
+insert into Transactions (id_transactions, purchase_date, id_customer, id_employee)
+values (4, to_date('25.09.2024', 'DD.MM.YYYY'), 4, 4);
+insert into Transact_Details (id_details, id_transactions, id_movie, quantity)
+values (4, 4, 4, 2);
+
+insert into Movies (id_movie, director, name, price, origin_of_creation)
+values (5, 'Peter Jackson', 'The Lord of the Rings: The Fellowship of the Ring', 24.99, 'New Zealand');
+insert into Movie_type (id_movietype, release_year, genre, id_movie, duration, format)
+values (5, 2001, 'Fantasy', 5, 178, 'DVD-R');
+insert into Customers (id_customer, name, surname, email, phone)
+values (5, 'Lucas', 'Klein', 'lucas.klein@webmail.com', '+49 15123456789');
+insert into Transactions (id_transactions, purchase_date, id_customer, id_employee)
+values (5, to_date('30.09.2024', 'DD.MM.YYYY'), 5, 5);
+insert into Transact_Details (id_details, id_transactions, id_movie, quantity)
+values (5, 5, 5, 1);
+
+
+GRANT INSERT, UPDATE, DELETE ON EMPLOYEES TO kursadarbs;
+GRANT INSERT, UPDATE, DELETE ON MOVIES TO kursadarbs;
+GRANT INSERT, UPDATE, DELETE ON MOVIE_TYPE TO kursadarbs;
+GRANT INSERT, UPDATE, DELETE ON CUSTOMERS TO kursadarbs;
+GRANT INSERT, UPDATE, DELETE ON TRANSACTIONS TO kursadarbs;
+GRANT INSERT, UPDATE, DELETE ON TRANSACT_DETAILS to kursadarbs;
