@@ -237,12 +237,16 @@ namespace Kursadarbs
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            EditEmployee f = new EditEmployee();
+            f.MdiParent = EmployeeForm.ActiveForm;
+            f.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            AddEmployee f = new AddEmployee();
+            f.MdiParent = EmployeeForm.ActiveForm;
+            f.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)

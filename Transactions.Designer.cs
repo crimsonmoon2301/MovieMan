@@ -205,6 +205,7 @@
             this.edit_btn.TabIndex = 13;
             this.edit_btn.Text = "Configure Transaction";
             this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // add_btn
             // 
@@ -217,6 +218,7 @@
             this.add_btn.TabIndex = 12;
             this.add_btn.Text = "Add new Transaction";
             this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // refrsh_btn
             // 

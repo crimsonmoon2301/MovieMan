@@ -162,5 +162,19 @@ namespace Kursadarbs
         {
 
         }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            AddCustomer f = new AddCustomer();
+            f.MdiParent = EmployeeForm.ActiveForm;
+            f.Show();
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            ConfigureCustomer f = new ConfigureCustomer();
+            f.MdiParent = EmployeeForm.ActiveForm;
+            f.Show();
+        }
     }
 }

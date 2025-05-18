@@ -321,7 +321,9 @@ namespace Kursadarbs
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AddNewMovie f = new AddNewMovie();
+            f.MdiParent = EmployeeForm.ActiveForm;
+            f.Show();
         }
 
 
@@ -379,6 +381,13 @@ namespace Kursadarbs
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            ConfigureMovie f = new ConfigureMovie();
+            f.MdiParent = EmployeeForm.ActiveForm;
+            f.Show();
         }
     }
 }

@@ -95,7 +95,7 @@
             this.sortgrp_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sortgrp_box.Location = new System.Drawing.Point(336, 349);
             this.sortgrp_box.Name = "sortgrp_box";
-            this.sortgrp_box.Size = new System.Drawing.Size(114, 120);
+            this.sortgrp_box.Size = new System.Drawing.Size(114, 112);
             this.sortgrp_box.TabIndex = 25;
             this.sortgrp_box.TabStop = false;
             this.sortgrp_box.Text = "Sort by:";
@@ -197,6 +197,7 @@
             this.edit_btn.TabIndex = 13;
             this.edit_btn.Text = "Configure Customer";
             this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // add_btn
             // 
@@ -209,6 +210,7 @@
             this.add_btn.TabIndex = 12;
             this.add_btn.Text = "Add new customer";
             this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // refrsh_btn
             // 

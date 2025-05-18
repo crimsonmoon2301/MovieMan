@@ -30,6 +30,9 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.desc_label = new System.Windows.Forms.Label();
+            this.title_label = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.refrsh_btn = new System.Windows.Forms.Button();
             this.savech_btn = new System.Windows.Forms.Button();
             this.edit_btn = new System.Windows.Forms.Button();
@@ -42,14 +45,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.genre_combbox = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.desc_label = new System.Windows.Forms.Label();
-            this.title_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -76,6 +76,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Available options for Movies";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // desc_label
+            // 
+            this.desc_label.AutoSize = true;
+            this.desc_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desc_label.Location = new System.Drawing.Point(6, 450);
+            this.desc_label.Name = "desc_label";
+            this.desc_label.Size = new System.Drawing.Size(35, 13);
+            this.desc_label.TabIndex = 17;
+            this.desc_label.Text = "label4";
+            // 
+            // title_label
+            // 
+            this.title_label.AutoSize = true;
+            this.title_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title_label.Location = new System.Drawing.Point(6, 417);
+            this.title_label.Name = "title_label";
+            this.title_label.Size = new System.Drawing.Size(41, 13);
+            this.title_label.TabIndex = 16;
+            this.title_label.Text = "label3";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.refrsh_btn, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.savech_btn, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.edit_btn, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.add_btn, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 36);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(109, 366);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // refrsh_btn
             // 
@@ -109,6 +147,7 @@
             this.edit_btn.TabIndex = 1;
             this.edit_btn.Text = "Configure existing entry";
             this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // add_btn
             // 
@@ -205,44 +244,6 @@
             this.genre_combbox.TabIndex = 0;
             this.genre_combbox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.refrsh_btn, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.savech_btn, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.edit_btn, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.add_btn, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 36);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(109, 366);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // desc_label
-            // 
-            this.desc_label.AutoSize = true;
-            this.desc_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desc_label.Location = new System.Drawing.Point(6, 450);
-            this.desc_label.Name = "desc_label";
-            this.desc_label.Size = new System.Drawing.Size(35, 13);
-            this.desc_label.TabIndex = 17;
-            this.desc_label.Text = "label4";
-            // 
-            // title_label
-            // 
-            this.title_label.AutoSize = true;
-            this.title_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title_label.Location = new System.Drawing.Point(6, 417);
-            this.title_label.Name = "title_label";
-            this.title_label.Size = new System.Drawing.Size(41, 13);
-            this.title_label.TabIndex = 16;
-            this.title_label.Text = "label3";
-            // 
             // Movies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,10 +261,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

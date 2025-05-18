@@ -83,11 +83,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewMovie.Designer.cs">
+      <DependentUpon>AddNewMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTransaction.Designer.cs">
+      <DependentUpon>AddTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigureCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigureCustomer.Designer.cs">
+      <DependentUpon>ConfigureCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigureMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigureMovie.Designer.cs">
+      <DependentUpon>ConfigureMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTransaction.Designer.cs">
+      <DependentUpon>EditTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Employees.cs">
       <SubType>Form</SubType>
@@ -122,8 +170,32 @@
     <Compile Include="Transactions.Designer.cs">
       <DependentUpon>Transactions.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewMovie.resx">
+      <DependentUpon>AddNewMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTransaction.resx">
+      <DependentUpon>AddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigureCustomer.resx">
+      <DependentUpon>ConfigureCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigureMovie.resx">
+      <DependentUpon>ConfigureMovie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTransaction.resx">
+      <DependentUpon>EditTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>

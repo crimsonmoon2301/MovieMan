@@ -141,5 +141,19 @@ namespace Kursadarbs
             title_label.Text = "";
             desc_label.Text = "";
         }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            AddTransaction f = new AddTransaction();
+            f.MdiParent = EmployeeForm.ActiveForm;
+            f.Show();
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            EditTransaction f = new EditTransaction();
+            f.MdiParent = EmployeeForm.ActiveForm;
+            f.Show();
+        }
     }
 }
