@@ -321,6 +321,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConfigureMovie";
             this.Text = "Configure a Movie entry";
+            this.Load += new System.EventHandler(this.ConfigureMovie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);

@@ -16,5 +16,27 @@ namespace Kursadarbs
         {
             InitializeComponent();
         }
+
+        private void LoadTransactionData()
+        {
+            try
+            {
+                Loader.LoadTransactions();
+
+                // Set the data sources without any filtering or additional logic
+                dataGridView1.DataSource = Loader.TransactionTable;
+                dataGridView2.DataSource = Loader.TransactionDetailsTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in Load transaction Data: " + ex.Message);
+            }
+        }
+
+        private void EditTransaction_Load(object sender, EventArgs e)
+        {
+            LoadTransactionData();
+        }
     }
 }

@@ -229,6 +229,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConfigureCustomer";
             this.Text = "Configure a existing Customer";
+            this.Load += new System.EventHandler(this.ConfigureCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.newcustom_grpbox.ResumeLayout(false);
             this.newcustom_grpbox.PerformLayout();

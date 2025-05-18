@@ -14,14 +14,7 @@ namespace Kursadarbs
 {
     public partial class Transactions: Form
     {
-        private OracleConnection connection;
-        private OracleDataAdapter adapter;
-        private OracleDataAdapter adapter1;
-        private DataTable transactionTable;
-        private DataTable transactdetTable;
-        private OracleCommandBuilder builder;
-        private OracleCommandBuilder builder1;
-
+        
         public Transactions()
         {
             InitializeComponent();
@@ -30,6 +23,22 @@ namespace Kursadarbs
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        private void LoadTransactionData()
+        {
+            try
+            {
+                Loader.LoadTransactions();
+
+                // Set the data sources without any filtering or additional logic
+                dataGridView1.DataSource = Loader.TransactionTable;
+                dataGridView2.DataSource = Loader.TransactionDetailsTable;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in Load transaction Data: " + ex.Message);
+            }
         }
 
         private void Transactions_Load(object sender, EventArgs e)
@@ -44,25 +53,9 @@ namespace Kursadarbs
             desc_label.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             SetupButtonHover();
 
-
-            string connectionString = "User Id=kursadarbs;Password=artis;Data Source=localhost:1521/XE";
-
             try
             {
-                connection = new OracleConnection(connectionString);
-                adapter = new OracleDataAdapter("SELECT * FROM TRANSACTIONS", connection);
-                adapter1 = new OracleDataAdapter("SELECT * FROM TRANSACT_DETAILS", connection);
-                builder = new OracleCommandBuilder(adapter);
-                builder1 = new OracleCommandBuilder(adapter1);
-
-
-                transactionTable = new DataTable();
-                transactdetTable = new DataTable();
-                adapter.Fill(transactionTable);
-                adapter1.Fill(transactdetTable);
-
-                dataGridView1.DataSource = transactionTable;
-                dataGridView2.DataSource = transactdetTable;
+                LoadTransactionData();
             }
             catch (OracleException ex)
             {

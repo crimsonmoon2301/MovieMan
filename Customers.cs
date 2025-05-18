@@ -15,11 +15,6 @@ namespace Kursadarbs
 {
     public partial class Customers: Form
     {
-        private OracleConnection connection;
-        private OracleDataAdapter adapter;
-        private static DataTable customerTable;
-        private OracleCommandBuilder builder;
-
         public Customers()
         {
             InitializeComponent();
@@ -34,7 +29,22 @@ namespace Kursadarbs
         {
             
         }
+        private void LoadCustomerData()
+        {
+            try
+            {
+                Loader.LoadCustomers();
+                dataGridView1.DataSource = Loader.CustomerTable;
 
+                // Hide any columns you want
+                if (dataGridView1.Columns.Contains("ID_CUSTOMER"))
+                    dataGridView1.Columns["ID_CUSTOMER"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Customers_Load(object sender, EventArgs e)
         {
             title_label.Visible = false;
@@ -47,35 +57,7 @@ namespace Kursadarbs
             desc_label.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             SetupButtonHover();
 
-
-            string connectionString = "User Id=kursadarbs;Password=artis;Data Source=localhost:1521/XE";
-
-            try
-            {
-                connection = new OracleConnection(connectionString);
-                adapter = new OracleDataAdapter("SELECT * FROM CUSTOMERS", connection);
-                builder = new OracleCommandBuilder(adapter);
-
-                customerTable = new DataTable();
-                adapter.Fill(customerTable);
-
-                dataGridView1.DataSource = customerTable;
-
-                if (dataGridView1.Columns.Contains("ID_CUSTOMER"))
-                {
-                    dataGridView1.Columns["ID_CUSTOMER"].Visible = false;
-                }
-
-
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unexpected error: " + ex.Message);
-            }
+            LoadCustomerData();
         }
 
         private void SetupButtonHover()

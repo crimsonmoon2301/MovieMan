@@ -263,6 +263,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EditTransaction";
             this.Text = "Configure a Transaction entry";
+            this.Load += new System.EventHandler(this.EditTransaction_Load);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

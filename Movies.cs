@@ -15,15 +15,6 @@ namespace Kursadarbs
 {
     public partial class Movies : Form
     {
-        private OracleConnection connection;
-        private OracleDataAdapter adapter;
-        private OracleDataAdapter adapter1;
-        private DataTable movieTable;
-        private DataTable movietypeTable;
-        private OracleCommandBuilder builder;
-        private OracleCommandBuilder builder1;
-
-
         public Movies()
         {
             InitializeComponent();
@@ -46,105 +37,40 @@ namespace Kursadarbs
             desc_label.MaximumSize = new Size(groupBox1.ClientSize.Width - 15, 0);
             desc_label.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             SetupButtonHover();
+            LoadMovieData();
 
-            string connectionString = "User Id=kursadarbs;Password=artis;Data Source=localhost:1521/XE";
+            if (dataGridView1.Columns.Contains("ID_MOVIE"))
+                dataGridView1.Columns["ID_MOVIE"].Visible = false;
+            if (dataGridView2.Columns.Contains("ID_MOVIETYPE"))
+                dataGridView2.Columns["ID_MOVIETYPE"].Visible = false;
+            if (dataGridView2.Columns.Contains("ID_MOVIE"))
+                dataGridView2.Columns["ID_MOVIE"].Visible = false;
+        }
 
+        private void LoadMovieData()
+        {
             try
             {
-                connection = new OracleConnection(connectionString);
-                adapter = new OracleDataAdapter("SELECT * FROM MOVIES", connection);
-                builder = new OracleCommandBuilder(adapter);
+                Loader.LoadMovies();
 
-                movieTable = new DataTable();
-                adapter.Fill(movieTable);
+                // Set the data sources without any filtering or additional logic
+                dataGridView1.DataSource = Loader.MovieTable;
+                dataGridView2.DataSource = Loader.MovieTypeTable;
 
-                dataGridView1.DataSource = movieTable;
-
-                if (dataGridView1.Columns.Contains("ID_MOVIE"))
-                {
-                    dataGridView1.Columns["ID_MOVIE"].Visible = false;
-                }
-
-                
-
-                // Movie tipi
-                adapter1 = new OracleDataAdapter("SELECT * FROM MOVIE_TYPE", connection);
-                builder1 = new OracleCommandBuilder(adapter1);
-
-                movietypeTable = new DataTable("Movie_Type"); // Set table name here
-                adapter1.Fill(movietypeTable);
-
-                // Now movieTable also needs a name to be referenced in DataRelation
-                movieTable.TableName = "Movies";
-
-                // Add to DataSet
-                DataSet ds = new DataSet();
-                ds.Tables.Add(movieTable);
-                ds.Tables.Add(movietypeTable);
-
-                // Set up relation
-                DataRelation relation = new DataRelation(
-                    "MovieToType",
-                    ds.Tables["Movies"].Columns["ID_MOVIE"],
-                    ds.Tables["Movie_Type"].Columns["ID_MOVIE"]
-                );
-                ds.Relations.Add(relation);
-
-                // Bind tables
-                dataGridView1.DataSource = ds.Tables["Movies"];
-                dataGridView2.DataSource = ds.Tables["Movie_Type"];
-
-
-                movietypeTable = new DataTable();
-                adapter1.Fill(movietypeTable);
-                
-
-                if (dataGridView2.Columns.Contains("ID_MOVIETYPE"))
-                {
-                    dataGridView2.Columns["ID_MOVIETYPE"].Visible = false;
-                }
-                if (dataGridView2.Columns.Contains("ID_MOVIE"))
-                {
-                    dataGridView2.Columns["ID_MOVIE"].Visible = false;
-                }
-
-
-                // After adapter1.Fill(movietypeTable);
-                var genres = movietypeTable.AsEnumerable()
-                    .Select(row => row.Field<string>("GENRE"))
-                    .Distinct()
-                    .Where(g => !string.IsNullOrEmpty(g))
-                    .OrderBy(g => g)
-                    .ToList();
-
+                // Basic combo box setup
                 genre_combbox.Items.Clear();
-                genre_combbox.Items.Add("All"); // Optional to show everything
-                genre_combbox.Items.AddRange(genres.ToArray());
+                genre_combbox.Items.Add("All");
                 genre_combbox.SelectedIndex = 0;
 
-                //foarmāti
-                // Get unique formats
-                var formats = movietypeTable.AsEnumerable()
-                    .Select(row => row.Field<string>("FORMAT"))
-                    .Distinct()
-                    .Where(f => !string.IsNullOrEmpty(f))
-                    .OrderBy(f => f)
-                    .ToList();
-
                 formt_combbox.Items.Clear();
-                formt_combbox.Items.Add("All"); // optional
-                formt_combbox.Items.AddRange(formats.ToArray());
+                formt_combbox.Items.Add("All");
                 formt_combbox.SelectedIndex = 0;
 
-
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
+               
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unexpected error: " + ex.Message);
+                MessageBox.Show("Error in LoadMovieData: " + ex.Message);
             }
         }
 
@@ -247,28 +173,30 @@ namespace Kursadarbs
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            // gotta fix this but class works ig
             string selectedGenre = genre_combbox.SelectedItem.ToString();
 
             if (selectedGenre == "All")
             {
                 // Show all
-                dataGridView2.DataSource = movietypeTable;
-                dataGridView1.DataSource = movieTable;
+                dataGridView2.DataSource = Loader.MovieTypeTable;
+                dataGridView1.DataSource = Loader.MovieTable;
             }
             else
             {
                 // Filter Movie_type by genre
-                DataView filteredTypeView = new DataView(movietypeTable);
+                DataView filteredTypeView = new DataView(Loader.MovieTypeTable);
                 filteredTypeView.RowFilter = $"GENRE = '{selectedGenre.Replace("'", "''")}'";
                 dataGridView2.DataSource = filteredTypeView;
 
                 // Get matching movie IDs
-                var matchingIDs = movietypeTable.AsEnumerable()
+                var matchingIDs = Loader.MovieTypeTable.AsEnumerable()
                                  .Where(row => row.Field<string>("GENRE") == selectedGenre)
                                  .Select(row => row["ID_MOVIE"].ToString())
                                  .ToList();
 
-                DataView filteredMovieView = new DataView(movieTable);
+                DataView filteredMovieView = new DataView(Loader.MovieTable);
                 if (matchingIDs.Any())
                 {
                     string idFilter = string.Join(",", matchingIDs.Select(id => $"'{id}'"));
@@ -288,23 +216,23 @@ namespace Kursadarbs
 
             if (selectedFormat == "All")
             {
-                dataGridView2.DataSource = movietypeTable;
-                dataGridView1.DataSource = movieTable;
+                dataGridView2.DataSource = Loader.MovieTypeTable;
+                dataGridView1.DataSource = Loader.MovieTable;
             }
             else
             {
                 // Filter Movie_type by format
-                DataView filteredTypeView = new DataView(movietypeTable);
+                DataView filteredTypeView = new DataView(Loader.MovieTypeTable);
                 filteredTypeView.RowFilter = $"FORMAT = '{selectedFormat.Replace("'", "''")}'";
                 dataGridView2.DataSource = filteredTypeView;
 
                 // Get matching movie IDs as strings
-                var matchingIDs = movietypeTable.AsEnumerable()
+                var matchingIDs = Loader.MovieTypeTable.AsEnumerable()
                     .Where(row => row.Field<string>("FORMAT") == selectedFormat)
                     .Select(row => row["ID_MOVIE"].ToString())
                     .ToList();
 
-                DataView filteredMovieView = new DataView(movieTable);
+                DataView filteredMovieView = new DataView(Loader.MovieTable);
                 if (matchingIDs.Any())
                 {
                     string idFilter = string.Join(",", matchingIDs.Select(id => $"'{id}'"));
@@ -349,7 +277,7 @@ namespace Kursadarbs
                 else
                 {
                     row.Selected = false;
-                    adapter.Update((DataTable)dataGridView1.DataSource);
+                    Loader.MovieAdapter.Update((DataTable)dataGridView1.DataSource);
                 }
                
             }

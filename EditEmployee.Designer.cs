@@ -270,6 +270,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EditEmployee";
             this.Text = "Configure a Employee";
+            this.Load += new System.EventHandler(this.EditEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.newemp_grpbox.ResumeLayout(false);
             this.newemp_grpbox.PerformLayout();

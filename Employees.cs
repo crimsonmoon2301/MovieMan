@@ -14,11 +14,6 @@ namespace Kursadarbs
 {
     public partial class Employees: Form
     {
-        private OracleConnection connection;
-        private OracleDataAdapter adapter;
-        private DataTable employeeTable;
-        private OracleCommandBuilder builder;
-
         public Employees()
         {
             InitializeComponent();
@@ -34,6 +29,25 @@ namespace Kursadarbs
 
         }
 
+        private void LoadEmployeeData()
+        {
+            try
+            {
+                Loader.LoadEmployees();
+                dataGridView1.DataSource = Loader.EmployeeTable;
+
+                if (dataGridView1.Columns.Contains("ID_EMPLOYEE"))
+                    dataGridView1.Columns["ID_EMPLOYEE"].Visible = false;
+
+                if (dataGridView1.Columns.Contains("MANAGER_ID"))
+                    dataGridView1.Columns["MANAGER_ID"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void Employees_Load(object sender, EventArgs e)
         {
             
@@ -45,44 +59,9 @@ namespace Kursadarbs
             title_label.MaximumSize = new Size(groupBox1.ClientSize.Width - 15, 0);
             desc_label.MaximumSize = new Size(groupBox1.ClientSize.Width - 15, 0);
             desc_label.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+
             SetupButtonHover();
-
-            
-
-
-            string connectionString = "User Id=kursadarbs;Password=artis;Data Source=localhost:1521/XE";
-
-            try
-            {
-                connection = new OracleConnection(connectionString);
-                adapter = new OracleDataAdapter("SELECT * FROM EMPLOYEES", connection);
-                builder = new OracleCommandBuilder(adapter);
-
-                employeeTable = new DataTable();
-                adapter.Fill(employeeTable);
-
-                dataGridView1.DataSource = employeeTable;
-
-                if (dataGridView1.Columns.Contains("ID_EMPLOYEE"))
-                {
-                    dataGridView1.Columns["ID_EMPLOYEE"].Visible = false;
-                }
-
-                if (dataGridView1.Columns.Contains("MANAGER_ID"))
-                {
-                    dataGridView1.Columns["MANAGER_ID"].Visible = false;
-                }
-
-
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unexpected error: " + ex.Message);
-            }
+            LoadEmployeeData();
         }
 
         private void SetupButtonHover()
