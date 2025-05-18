@@ -1,0 +1,7 @@
+LBTU IITF FAKULTĀTE 2.kurss
+
+LIETOJUMU PROGRAMMMĒŠANA DATUBĀZĒM
+
+KURSADARBS
+
+![{5C459998-9720-4B2D-8629-73B351EE43B6}](https://github.com/user-attachments/assets/24fdce4c-4f9b-427f-8b32-abfc2ed7b3d1)
