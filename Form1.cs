@@ -90,5 +90,12 @@ namespace Kursadarbs
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            quickadd f = new quickadd();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
