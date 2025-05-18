@@ -115,6 +115,7 @@
     <Compile Include="quickadd.Designer.cs">
       <DependentUpon>quickadd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Savechanges.cs" />
     <Compile Include="Transactions.cs">
       <SubType>Form</SubType>
     </Compile>
