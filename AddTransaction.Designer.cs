@@ -203,6 +203,7 @@
             this.Controls.Add(this.groupBox5);
             this.Name = "AddTransaction";
             this.Text = "Add a new Transaction";
+            this.Load += new System.EventHandler(this.AddTransaction_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();

@@ -30,10 +30,10 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.newcustom_grpbox = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumber = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.newcust_name = new System.Windows.Forms.Label();
             this.newcust_phone = new System.Windows.Forms.Label();
             this.newcust_surname = new System.Windows.Forms.Label();
@@ -58,10 +58,10 @@
             // 
             // newcustom_grpbox
             // 
-            this.newcustom_grpbox.Controls.Add(this.textBox4);
-            this.newcustom_grpbox.Controls.Add(this.textBox3);
-            this.newcustom_grpbox.Controls.Add(this.textBox2);
-            this.newcustom_grpbox.Controls.Add(this.textBox1);
+            this.newcustom_grpbox.Controls.Add(this.txtNumber);
+            this.newcustom_grpbox.Controls.Add(this.txtEmail);
+            this.newcustom_grpbox.Controls.Add(this.txtSurname);
+            this.newcustom_grpbox.Controls.Add(this.txtName);
             this.newcustom_grpbox.Controls.Add(this.newcust_name);
             this.newcustom_grpbox.Controls.Add(this.newcust_phone);
             this.newcustom_grpbox.Controls.Add(this.newcust_surname);
@@ -73,33 +73,33 @@
             this.newcustom_grpbox.TabStop = false;
             this.newcustom_grpbox.Text = "Credentials:";
             // 
-            // textBox4
+            // txtNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(91, 110);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtNumber.Location = new System.Drawing.Point(91, 110);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(167, 20);
+            this.txtNumber.TabIndex = 11;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(91, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(167, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtEmail.Location = new System.Drawing.Point(91, 83);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(167, 20);
+            this.txtEmail.TabIndex = 10;
             // 
-            // textBox2
+            // txtSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtSurname.Location = new System.Drawing.Point(91, 57);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(167, 20);
+            this.txtSurname.TabIndex = 9;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtName.Location = new System.Drawing.Point(91, 31);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(167, 20);
+            this.txtName.TabIndex = 8;
             // 
             // newcust_name
             // 
@@ -160,6 +160,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Confirm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -170,6 +171,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddCustomer
             // 
@@ -180,6 +182,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "AddCustomer";
             this.Text = "Add New Customer";
+            this.Load += new System.EventHandler(this.AddCustomer_Load);
             this.groupBox1.ResumeLayout(false);
             this.newcustom_grpbox.ResumeLayout(false);
             this.newcustom_grpbox.PerformLayout();
@@ -192,10 +195,10 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox newcustom_grpbox;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label newcust_name;
         private System.Windows.Forms.Label newcust_phone;
         private System.Windows.Forms.Label newcust_surname;

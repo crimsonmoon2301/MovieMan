@@ -12,7 +12,7 @@ namespace Kursadarbs
 {
     public static class Loader
     {
-        private static string connectionString = "User Id=kursadarbs;Password=artis;Data Source=localhost:1521/XE";
+        public static string connectionString = "User Id=kursadarbs;Password=artis;Data Source=localhost:1521/XE";
 
         // EMPLOYEES
         public static OracleConnection Connection { get; private set; }

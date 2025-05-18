@@ -16,5 +16,10 @@ namespace Kursadarbs
         {
             InitializeComponent();
         }
+
+        private void AddTransaction_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

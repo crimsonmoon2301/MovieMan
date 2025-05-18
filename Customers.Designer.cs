@@ -237,6 +237,7 @@
             this.savech_btn.TabIndex = 11;
             this.savech_btn.Text = "Save changes made";
             this.savech_btn.UseVisualStyleBackColor = true;
+            this.savech_btn.Click += new System.EventHandler(this.savech_btn_Click);
             // 
             // Customers
             // 

@@ -147,16 +147,56 @@ namespace Kursadarbs
 
         private void add_btn_Click(object sender, EventArgs e)
         {
+            // First, ensure customers are loaded
+            if (Loader.CustomerTable == null)
+            {
+                Loader.LoadCustomers();
+            }
             AddCustomer f = new AddCustomer();
             f.MdiParent = EmployeeForm.ActiveForm;
             f.Show();
+            
         }
 
         private void edit_btn_Click(object sender, EventArgs e)
         {
-            ConfigureCustomer f = new ConfigureCustomer();
-            f.MdiParent = EmployeeForm.ActiveForm;
-            f.Show();
+            if (dataGridView1.CurrentRow != null)
+            {
+                int rowIndex = dataGridView1.CurrentRow.Index;
+                ConfigureCustomer form = new ConfigureCustomer(rowIndex);
+                form.MdiParent = EmployeeForm.ActiveForm;
+                form.Show();
+            }
+        }
+
+        private void savech_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Loader.CustomerAdapter.Update(Loader.CustomerTable);
+                MessageBox.Show("Changes saved successfully.");
+
+                RefreshCustomerTable(); // see step 2
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save changes: " + ex.Message);
+            }
+        }
+        private void RefreshCustomerTable()
+        {
+            try
+            {
+                Loader.LoadCustomers(); // reload from DB
+                dataGridView1.DataSource = Loader.CustomerTable;
+
+                if (dataGridView1.Columns.Contains("ID_CUSTOMER"))
+                    dataGridView1.Columns["ID_CUSTOMER"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to refresh: " + ex.Message);
+            }
         }
     }
 }
