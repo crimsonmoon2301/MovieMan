@@ -209,6 +209,24 @@ namespace Kursadarbs
                 desc_label.Text = "Show movies by their genre. Shows all by default.";
             };
             genre_combbox.MouseLeave += ClearHoverLabels;
+
+            dataGridView1.MouseEnter += (s, e) =>
+            {
+                title_label.Visible = true;
+                desc_label.Visible = true;
+
+                title_label.Text = "Did you know?";
+                desc_label.Text = "You can double click to see information about the movie!";
+            };
+
+            dataGridView2.MouseEnter += (s, e) =>
+            {
+                title_label.Visible = true;
+                desc_label.Visible = true;
+
+                title_label.Text = "Did you know?";
+                desc_label.Text = "You can double click to see information about the movie!";
+            };
         }
 
         private void ClearHoverLabels(object sender, EventArgs e)

@@ -149,7 +149,7 @@ namespace Kursadarbs
                 desc_label.Visible = true;
 
                 title_label.Text = "Sorting section";
-                desc_label.Text = "Use this if you want to sort data in a specific way.";
+                desc_label.Text = "Use this if you want to sort data in a specific way. It sorts from Z - A by default.";
             };
             sortgrp_box.MouseLeave += ClearHoverLabels;
 
