@@ -47,6 +47,8 @@ namespace Kursadarbs
             desc_label.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             SetupButtonHover();
 
+            
+
 
             string connectionString = "User Id=kursadarbs;Password=artis;Data Source=localhost:1521/XE";
 
@@ -60,6 +62,18 @@ namespace Kursadarbs
                 adapter.Fill(employeeTable);
 
                 dataGridView1.DataSource = employeeTable;
+
+                if (dataGridView1.Columns.Contains("ID_EMPLOYEE"))
+                {
+                    dataGridView1.Columns["ID_EMPLOYEE"].Visible = false;
+                }
+
+                if (dataGridView1.Columns.Contains("MANAGER_ID"))
+                {
+                    dataGridView1.Columns["MANAGER_ID"].Visible = false;
+                }
+
+
             }
             catch (OracleException ex)
             {

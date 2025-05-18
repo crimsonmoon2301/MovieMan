@@ -30,8 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.outputgrp_box = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.popup_radio = new System.Windows.Forms.RadioButton();
+            this.pdf_radio = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,11 +45,11 @@
             this.refrsh_btn = new System.Windows.Forms.Button();
             this.savech_btn = new System.Windows.Forms.Button();
             this.sortgrp_box = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.outputgrp_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -69,8 +69,8 @@
             // 
             // outputgrp_box
             // 
-            this.outputgrp_box.Controls.Add(this.radioButton1);
-            this.outputgrp_box.Controls.Add(this.radioButton2);
+            this.outputgrp_box.Controls.Add(this.popup_radio);
+            this.outputgrp_box.Controls.Add(this.pdf_radio);
             this.outputgrp_box.Controls.Add(this.button2);
             this.outputgrp_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputgrp_box.Location = new System.Drawing.Point(266, 393);
@@ -80,29 +80,29 @@
             this.outputgrp_box.TabStop = false;
             this.outputgrp_box.Text = "Output options:";
             // 
-            // radioButton1
+            // popup_radio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(17, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(151, 17);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Show on a pop-up window";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.popup_radio.AutoSize = true;
+            this.popup_radio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.popup_radio.Location = new System.Drawing.Point(17, 19);
+            this.popup_radio.Name = "popup_radio";
+            this.popup_radio.Size = new System.Drawing.Size(151, 17);
+            this.popup_radio.TabIndex = 12;
+            this.popup_radio.TabStop = true;
+            this.popup_radio.Text = "Show on a pop-up window";
+            this.popup_radio.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // pdf_radio
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(17, 52);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(119, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Show in PDF format";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.pdf_radio.AutoSize = true;
+            this.pdf_radio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pdf_radio.Location = new System.Drawing.Point(17, 52);
+            this.pdf_radio.Name = "pdf_radio";
+            this.pdf_radio.Size = new System.Drawing.Size(119, 17);
+            this.pdf_radio.TabIndex = 13;
+            this.pdf_radio.TabStop = true;
+            this.pdf_radio.Text = "Show in PDF format";
+            this.pdf_radio.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -253,54 +253,10 @@
             this.sortgrp_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sortgrp_box.Location = new System.Drawing.Point(12, 393);
             this.sortgrp_box.Name = "sortgrp_box";
-            this.sortgrp_box.Size = new System.Drawing.Size(231, 122);
+            this.sortgrp_box.Size = new System.Drawing.Size(243, 122);
             this.sortgrp_box.TabIndex = 20;
             this.sortgrp_box.TabStop = false;
             this.sortgrp_box.Text = "Sorting options";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(6, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(81, 17);
-            this.checkBox1.TabIndex = 28;
-            this.checkBox1.Text = "Movie (A-Z)";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(6, 66);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(116, 17);
-            this.checkBox2.TabIndex = 29;
-            this.checkBox2.Text = "Purchase (Newest)";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(6, 43);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(110, 17);
-            this.checkBox4.TabIndex = 31;
-            this.checkBox4.Text = "Quantity (Highest)";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(133, 42);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(98, 17);
-            this.checkBox6.TabIndex = 33;
-            this.checkBox6.Text = "Employee (A-Z)";
-            this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
@@ -312,6 +268,50 @@
             this.checkBox3.TabIndex = 34;
             this.checkBox3.Text = "Customer (A-Z)";
             this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(133, 52);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(98, 17);
+            this.checkBox6.TabIndex = 33;
+            this.checkBox6.Text = "Employee (A-Z)";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.Location = new System.Drawing.Point(6, 53);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(110, 17);
+            this.checkBox4.TabIndex = 31;
+            this.checkBox4.Text = "Quantity (Highest)";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(6, 89);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(116, 17);
+            this.checkBox2.TabIndex = 29;
+            this.checkBox2.Text = "Purchase (Newest)";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(6, 20);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(81, 17);
+            this.checkBox1.TabIndex = 28;
+            this.checkBox1.Text = "Movie (A-Z)";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Transactions
             // 
@@ -346,8 +346,8 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox outputgrp_box;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton popup_radio;
+        private System.Windows.Forms.RadioButton pdf_radio;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label1;

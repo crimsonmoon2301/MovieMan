@@ -60,6 +60,13 @@ namespace Kursadarbs
                 adapter.Fill(customerTable);
 
                 dataGridView1.DataSource = customerTable;
+
+                if (dataGridView1.Columns.Contains("ID_CUSTOMER"))
+                {
+                    dataGridView1.Columns["ID_CUSTOMER"].Visible = false;
+                }
+
+
             }
             catch (OracleException ex)
             {

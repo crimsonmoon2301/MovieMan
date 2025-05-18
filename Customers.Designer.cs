@@ -37,13 +37,13 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.desc_label = new System.Windows.Forms.Label();
+            this.title_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.edit_btn = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
             this.refrsh_btn = new System.Windows.Forms.Button();
             this.savech_btn = new System.Windows.Forms.Button();
-            this.add_btn = new System.Windows.Forms.Button();
-            this.title_label = new System.Windows.Forms.Label();
-            this.desc_label = new System.Windows.Forms.Label();
-            this.edit_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.sortgrp_box.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -55,7 +55,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 40);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(480, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(438, 298);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -93,7 +93,7 @@
             this.sortgrp_box.Controls.Add(this.checkBox3);
             this.sortgrp_box.Controls.Add(this.checkBox1);
             this.sortgrp_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sortgrp_box.Location = new System.Drawing.Point(378, 349);
+            this.sortgrp_box.Location = new System.Drawing.Point(336, 349);
             this.sortgrp_box.Name = "sortgrp_box";
             this.sortgrp_box.Size = new System.Drawing.Size(114, 120);
             this.sortgrp_box.TabIndex = 25;
@@ -140,13 +140,32 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(512, 0);
+            this.groupBox1.Location = new System.Drawing.Point(460, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(119, 487);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Available options";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // desc_label
+            // 
+            this.desc_label.AutoSize = true;
+            this.desc_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desc_label.Location = new System.Drawing.Point(6, 403);
+            this.desc_label.Name = "desc_label";
+            this.desc_label.Size = new System.Drawing.Size(35, 13);
+            this.desc_label.TabIndex = 16;
+            this.desc_label.Text = "label4";
+            // 
+            // title_label
+            // 
+            this.title_label.AutoSize = true;
+            this.title_label.Location = new System.Drawing.Point(6, 365);
+            this.title_label.Name = "title_label";
+            this.title_label.Size = new System.Drawing.Size(41, 13);
+            this.title_label.TabIndex = 15;
+            this.title_label.Text = "label3";
             // 
             // tableLayoutPanel1
             // 
@@ -165,6 +184,31 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(111, 307);
             this.tableLayoutPanel1.TabIndex = 14;
+            // 
+            // edit_btn
+            // 
+            this.edit_btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_btn.Location = new System.Drawing.Point(8, 84);
+            this.edit_btn.Margin = new System.Windows.Forms.Padding(8);
+            this.edit_btn.Name = "edit_btn";
+            this.edit_btn.Padding = new System.Windows.Forms.Padding(10);
+            this.edit_btn.Size = new System.Drawing.Size(95, 60);
+            this.edit_btn.TabIndex = 13;
+            this.edit_btn.Text = "Configure Customer";
+            this.edit_btn.UseVisualStyleBackColor = true;
+            // 
+            // add_btn
+            // 
+            this.add_btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_btn.Location = new System.Drawing.Point(8, 8);
+            this.add_btn.Margin = new System.Windows.Forms.Padding(8);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(95, 60);
+            this.add_btn.TabIndex = 12;
+            this.add_btn.Text = "Add new customer";
+            this.add_btn.UseVisualStyleBackColor = true;
             // 
             // refrsh_btn
             // 
@@ -192,55 +236,11 @@
             this.savech_btn.Text = "Save changes made";
             this.savech_btn.UseVisualStyleBackColor = true;
             // 
-            // add_btn
-            // 
-            this.add_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_btn.Location = new System.Drawing.Point(8, 8);
-            this.add_btn.Margin = new System.Windows.Forms.Padding(8);
-            this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(95, 60);
-            this.add_btn.TabIndex = 12;
-            this.add_btn.Text = "Add new customer";
-            this.add_btn.UseVisualStyleBackColor = true;
-            // 
-            // title_label
-            // 
-            this.title_label.AutoSize = true;
-            this.title_label.Location = new System.Drawing.Point(6, 365);
-            this.title_label.Name = "title_label";
-            this.title_label.Size = new System.Drawing.Size(41, 13);
-            this.title_label.TabIndex = 15;
-            this.title_label.Text = "label3";
-            // 
-            // desc_label
-            // 
-            this.desc_label.AutoSize = true;
-            this.desc_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desc_label.Location = new System.Drawing.Point(6, 403);
-            this.desc_label.Name = "desc_label";
-            this.desc_label.Size = new System.Drawing.Size(35, 13);
-            this.desc_label.TabIndex = 16;
-            this.desc_label.Text = "label4";
-            // 
-            // edit_btn
-            // 
-            this.edit_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_btn.Location = new System.Drawing.Point(8, 84);
-            this.edit_btn.Margin = new System.Windows.Forms.Padding(8);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Padding = new System.Windows.Forms.Padding(10);
-            this.edit_btn.Size = new System.Drawing.Size(95, 60);
-            this.edit_btn.TabIndex = 13;
-            this.edit_btn.Text = "Configure Customer";
-            this.edit_btn.UseVisualStyleBackColor = true;
-            // 
             // Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 487);
+            this.ClientSize = new System.Drawing.Size(579, 487);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.sortgrp_box);
             this.Controls.Add(this.label1);

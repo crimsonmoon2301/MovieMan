@@ -97,5 +97,15 @@ namespace Kursadarbs
             f.MdiParent = this;
             f.Show();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
