@@ -34,12 +34,6 @@
             this.hiarch_radio = new System.Windows.Forms.RadioButton();
             this.flatlist_radio = new System.Windows.Forms.RadioButton();
             this.struct_grpbox = new System.Windows.Forms.GroupBox();
-            this.sortgrp_box = new System.Windows.Forms.GroupBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.desc_label = new System.Windows.Forms.Label();
             this.title_label = new System.Windows.Forms.Label();
@@ -47,13 +41,8 @@
             this.add_btn = new System.Windows.Forms.Button();
             this.savech_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.struct_grpbox.SuspendLayout();
-            this.sortgrp_box.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -115,87 +104,12 @@
             this.struct_grpbox.Controls.Add(this.flatlist_radio);
             this.struct_grpbox.Controls.Add(this.hiarch_radio);
             this.struct_grpbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.struct_grpbox.Location = new System.Drawing.Point(15, 403);
+            this.struct_grpbox.Location = new System.Drawing.Point(300, 354);
             this.struct_grpbox.Name = "struct_grpbox";
             this.struct_grpbox.Size = new System.Drawing.Size(167, 71);
             this.struct_grpbox.TabIndex = 19;
             this.struct_grpbox.TabStop = false;
             this.struct_grpbox.Text = "Show employee structure:";
-            // 
-            // sortgrp_box
-            // 
-            this.sortgrp_box.Controls.Add(this.checkBox9);
-            this.sortgrp_box.Controls.Add(this.checkBox8);
-            this.sortgrp_box.Controls.Add(this.checkBox7);
-            this.sortgrp_box.Controls.Add(this.checkBox5);
-            this.sortgrp_box.Controls.Add(this.checkBox6);
-            this.sortgrp_box.Controls.Add(this.checkBox4);
-            this.sortgrp_box.Controls.Add(this.checkBox3);
-            this.sortgrp_box.Controls.Add(this.checkBox2);
-            this.sortgrp_box.Controls.Add(this.checkBox1);
-            this.sortgrp_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sortgrp_box.Location = new System.Drawing.Point(205, 354);
-            this.sortgrp_box.Name = "sortgrp_box";
-            this.sortgrp_box.Size = new System.Drawing.Size(342, 120);
-            this.sortgrp_box.TabIndex = 20;
-            this.sortgrp_box.TabStop = false;
-            this.sortgrp_box.Text = "Sort by:";
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(107, 53);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(95, 17);
-            this.checkBox6.TabIndex = 7;
-            this.checkBox6.Text = "Position (Z - A)";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(221, 30);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(92, 17);
-            this.checkBox4.TabIndex = 5;
-            this.checkBox4.Text = "Highest salary";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(107, 30);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(95, 17);
-            this.checkBox3.TabIndex = 4;
-            this.checkBox3.Text = "Position (A - Z)";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(221, 53);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(90, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Lowest salary";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(221, 76);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(69, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Hire date";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -207,7 +121,7 @@
             this.groupBox1.Location = new System.Drawing.Point(561, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(131, 482);
+            this.groupBox1.Size = new System.Drawing.Size(131, 456);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Available options";
@@ -285,57 +199,12 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Available information about the store staff";
             // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(6, 30);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(86, 17);
-            this.checkBox5.TabIndex = 8;
-            this.checkBox5.Text = "Name (A - Z)";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.Location = new System.Drawing.Point(6, 53);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(86, 17);
-            this.checkBox7.TabIndex = 9;
-            this.checkBox7.Text = "Name (Z - A)";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox8.Location = new System.Drawing.Point(6, 76);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(100, 17);
-            this.checkBox8.TabIndex = 10;
-            this.checkBox8.Text = "Surname (A - Z)";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox9.Location = new System.Drawing.Point(107, 76);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(100, 17);
-            this.checkBox9.TabIndex = 11;
-            this.checkBox9.Text = "Surname (Z - A)";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 482);
+            this.ClientSize = new System.Drawing.Size(692, 456);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.sortgrp_box);
             this.Controls.Add(this.struct_grpbox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.filtr_label);
@@ -347,8 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.struct_grpbox.ResumeLayout(false);
             this.struct_grpbox.PerformLayout();
-            this.sortgrp_box.ResumeLayout(false);
-            this.sortgrp_box.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -365,22 +232,12 @@
         private System.Windows.Forms.RadioButton hiarch_radio;
         private System.Windows.Forms.RadioButton flatlist_radio;
         private System.Windows.Forms.GroupBox struct_grpbox;
-        private System.Windows.Forms.GroupBox sortgrp_box;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button savech_btn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label desc_label;
         private System.Windows.Forms.Label title_label;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox9;
     }
 }

@@ -34,15 +34,41 @@ namespace Kursadarbs
             try
             {
                 Loader.LoadCustomers();
-                dataGridView1.DataSource = Loader.CustomerTable;
+                dataGridView1.DataSource = Loader.CustomerTable.DefaultView;
 
                 // Hide any columns you want
                 if (dataGridView1.Columns.Contains("ID_CUSTOMER"))
                     dataGridView1.Columns["ID_CUSTOMER"].Visible = false;
+
+                NormalizeColumnHeaders();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void NormalizeColumnHeaders()
+        {
+            Dictionary<string, string> headerMappings = new Dictionary<string, string>()
+            {
+                 { "NAME", "Name" },
+                 { "SURNAME", "Surname" },
+                 { "EMAIL", "E-mail" },
+                 { "PHONE", "Contact" },
+                 { "ADDRESS", "Address" },
+                 { "CITY", "City" },
+                 { "ZIP", "ZIP Code" },
+                 { "COUNTRY", "Country" },
+        // Add more mappings as needed
+            };
+
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                if (headerMappings.ContainsKey(column.Name))
+                {
+                    column.HeaderText = headerMappings[column.Name];
+                }
             }
         }
         private void Customers_Load(object sender, EventArgs e)
@@ -162,11 +188,39 @@ namespace Kursadarbs
 
                 if (dataGridView1.Columns.Contains("ID_CUSTOMER"))
                     dataGridView1.Columns["ID_CUSTOMER"].Visible = false;
+
+                NormalizeColumnHeaders();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to refresh: " + ex.Message);
             }
+        }
+
+        private void filtr_txtbox_TextChanged(object sender, EventArgs e)
+        {
+            if (Loader.CustomerTable == null || Loader.CustomerTable.Columns.Count == 0)
+                return;
+
+            string searchText = filtr_txtbox.Text.Trim().Replace("'", "''");
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                Loader.CustomerTable.DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            List<string> filterConditions = new List<string>();
+
+            foreach (DataColumn column in Loader.CustomerTable.Columns)
+            {
+                if (column.DataType == typeof(string))
+                {
+                    filterConditions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            Loader.CustomerTable.DefaultView.RowFilter = string.Join(" OR ", filterConditions);
         }
     }
 }

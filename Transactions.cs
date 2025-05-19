@@ -121,5 +121,42 @@ namespace Kursadarbs
             f.MdiParent = EmployeeForm.ActiveForm;
             f.Show();
         }
+
+        private void savech_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Loader.MovieAdapter.Update(Loader.MovieTable);
+                Loader.MovieTypeAdapter.Update(Loader.MovieTypeTable);
+                MessageBox.Show("Changes saved successfully.");
+
+                RefreshTransactionTables();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save changes: " + ex.Message);
+            }
+        }
+        private void RefreshTransactionTables()
+        {
+            try
+            {
+                Loader.LoadMovies(); // reload from DB
+                dataGridView1.DataSource = Loader.TransactionTable;
+                dataGridView2.DataSource = Loader.TransactionDetailsTable;
+
+                if (dataGridView1.Columns.Contains("ID_TRANSACTION"))
+                    dataGridView1.Columns["ID_TRANSACTION"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to refresh: " + ex.Message);
+            }
+        }
+
+        private void outputgrp_box_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

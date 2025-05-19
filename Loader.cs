@@ -51,7 +51,7 @@ namespace Kursadarbs
         public static OracleDataAdapter TransactionDetailsAdapter { get; private set; }
         public static OracleCommandBuilder TransactionDetailsBuilder { get; private set; }
         public static DataTable TransactionDetailsTable { get; private set; }
-
+        public static DataSet TransactionDataSet { get; private set; }
 
         public static void LoadTransactions()
         {
@@ -62,11 +62,11 @@ namespace Kursadarbs
                 TransactionAdapter = new OracleDataAdapter("SELECT * FROM TRANSACTIONS", connectionString);
 
                 TransactionDetailsAdapter = new OracleDataAdapter("SELECT * FROM TRANSACT_DETAILS", connectionString);
-
                 TransactionTable = new DataTable("Transactions");
                 TransactionAdapter.Fill(TransactionTable);
                 TransactionDetailsTable = new DataTable("Transaction_Details");
                 TransactionDetailsAdapter.Fill(TransactionDetailsTable);
+
             }
             catch (Exception ex)
             {

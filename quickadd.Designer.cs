@@ -36,21 +36,21 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.newcustom_grpbox = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhoneCustom = new System.Windows.Forms.TextBox();
+            this.txtemailCustom = new System.Windows.Forms.TextBox();
+            this.txtsurnameCustomer = new System.Windows.Forms.TextBox();
+            this.txtnameCustomer = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.newemp_grpbox = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.managedemp_cmb = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtsalEmp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txthireEmp = new System.Windows.Forms.TextBox();
+            this.txtposEmp = new System.Windows.Forms.TextBox();
+            this.txtsurnameEmp = new System.Windows.Forms.TextBox();
+            this.txtnameEmp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,18 +60,18 @@
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.txtgenreMov = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.formatMov_cmb = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtdurMov = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtReleaseMov = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtoriginMov = new System.Windows.Forms.TextBox();
+            this.txtpriceMov = new System.Windows.Forms.TextBox();
+            this.txtdirectMov = new System.Windows.Forms.TextBox();
+            this.txtTitlemov = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -83,15 +83,15 @@
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.radioButton12 = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtdateTrans = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtquantityTrans = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.movietrans_cmb = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.emptrans_cmb = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.customertrans_cmb = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.newcustom_grpbox.SuspendLayout();
@@ -143,6 +143,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(28, 31);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(94, 17);
@@ -173,13 +174,14 @@
             this.radioButton7.TabStop = true;
             this.radioButton7.Text = "Don\'t add";
             this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
             // 
             // newcustom_grpbox
             // 
-            this.newcustom_grpbox.Controls.Add(this.textBox4);
-            this.newcustom_grpbox.Controls.Add(this.textBox3);
-            this.newcustom_grpbox.Controls.Add(this.textBox2);
-            this.newcustom_grpbox.Controls.Add(this.textBox1);
+            this.newcustom_grpbox.Controls.Add(this.txtPhoneCustom);
+            this.newcustom_grpbox.Controls.Add(this.txtemailCustom);
+            this.newcustom_grpbox.Controls.Add(this.txtsurnameCustomer);
+            this.newcustom_grpbox.Controls.Add(this.txtnameCustomer);
             this.newcustom_grpbox.Controls.Add(this.newcust_name);
             this.newcustom_grpbox.Controls.Add(this.newcust_phone);
             this.newcustom_grpbox.Controls.Add(this.newcust_surname);
@@ -191,33 +193,33 @@
             this.newcustom_grpbox.TabStop = false;
             this.newcustom_grpbox.Text = "Credentials:";
             // 
-            // textBox4
+            // txtPhoneCustom
             // 
-            this.textBox4.Location = new System.Drawing.Point(91, 110);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtPhoneCustom.Location = new System.Drawing.Point(91, 110);
+            this.txtPhoneCustom.Name = "txtPhoneCustom";
+            this.txtPhoneCustom.Size = new System.Drawing.Size(167, 20);
+            this.txtPhoneCustom.TabIndex = 11;
             // 
-            // textBox3
+            // txtemailCustom
             // 
-            this.textBox3.Location = new System.Drawing.Point(91, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(167, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtemailCustom.Location = new System.Drawing.Point(91, 83);
+            this.txtemailCustom.Name = "txtemailCustom";
+            this.txtemailCustom.Size = new System.Drawing.Size(167, 20);
+            this.txtemailCustom.TabIndex = 10;
             // 
-            // textBox2
+            // txtsurnameCustomer
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtsurnameCustomer.Location = new System.Drawing.Point(91, 57);
+            this.txtsurnameCustomer.Name = "txtsurnameCustomer";
+            this.txtsurnameCustomer.Size = new System.Drawing.Size(167, 20);
+            this.txtsurnameCustomer.TabIndex = 9;
             // 
-            // textBox1
+            // txtnameCustomer
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtnameCustomer.Location = new System.Drawing.Point(91, 31);
+            this.txtnameCustomer.Name = "txtnameCustomer";
+            this.txtnameCustomer.Size = new System.Drawing.Size(167, 20);
+            this.txtnameCustomer.TabIndex = 8;
             // 
             // groupBox2
             // 
@@ -241,17 +243,18 @@
             this.radioButton8.TabStop = true;
             this.radioButton8.Text = "Don\'t add";
             this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton8_CheckedChanged);
             // 
             // newemp_grpbox
             // 
-            this.newemp_grpbox.Controls.Add(this.comboBox1);
+            this.newemp_grpbox.Controls.Add(this.managedemp_cmb);
             this.newemp_grpbox.Controls.Add(this.label6);
-            this.newemp_grpbox.Controls.Add(this.textBox9);
+            this.newemp_grpbox.Controls.Add(this.txtsalEmp);
             this.newemp_grpbox.Controls.Add(this.label5);
-            this.newemp_grpbox.Controls.Add(this.textBox5);
-            this.newemp_grpbox.Controls.Add(this.textBox6);
-            this.newemp_grpbox.Controls.Add(this.textBox7);
-            this.newemp_grpbox.Controls.Add(this.textBox8);
+            this.newemp_grpbox.Controls.Add(this.txthireEmp);
+            this.newemp_grpbox.Controls.Add(this.txtposEmp);
+            this.newemp_grpbox.Controls.Add(this.txtsurnameEmp);
+            this.newemp_grpbox.Controls.Add(this.txtnameEmp);
             this.newemp_grpbox.Controls.Add(this.label1);
             this.newemp_grpbox.Controls.Add(this.label2);
             this.newemp_grpbox.Controls.Add(this.label3);
@@ -263,13 +266,13 @@
             this.newemp_grpbox.TabStop = false;
             this.newemp_grpbox.Text = "Credentials:";
             // 
-            // comboBox1
+            // managedemp_cmb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 162);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 21);
-            this.comboBox1.TabIndex = 15;
+            this.managedemp_cmb.FormattingEnabled = true;
+            this.managedemp_cmb.Location = new System.Drawing.Point(100, 162);
+            this.managedemp_cmb.Name = "managedemp_cmb";
+            this.managedemp_cmb.Size = new System.Drawing.Size(167, 21);
+            this.managedemp_cmb.TabIndex = 15;
             // 
             // label6
             // 
@@ -280,12 +283,12 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Managed by:";
             // 
-            // textBox9
+            // txtsalEmp
             // 
-            this.textBox9.Location = new System.Drawing.Point(100, 136);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(167, 20);
-            this.textBox9.TabIndex = 13;
+            this.txtsalEmp.Location = new System.Drawing.Point(100, 136);
+            this.txtsalEmp.Name = "txtsalEmp";
+            this.txtsalEmp.Size = new System.Drawing.Size(167, 20);
+            this.txtsalEmp.TabIndex = 13;
             // 
             // label5
             // 
@@ -296,33 +299,33 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Salary:";
             // 
-            // textBox5
+            // txthireEmp
             // 
-            this.textBox5.Location = new System.Drawing.Point(100, 110);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(167, 20);
-            this.textBox5.TabIndex = 11;
+            this.txthireEmp.Location = new System.Drawing.Point(100, 110);
+            this.txthireEmp.Name = "txthireEmp";
+            this.txthireEmp.Size = new System.Drawing.Size(167, 20);
+            this.txthireEmp.TabIndex = 11;
             // 
-            // textBox6
+            // txtposEmp
             // 
-            this.textBox6.Location = new System.Drawing.Point(100, 83);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(167, 20);
-            this.textBox6.TabIndex = 10;
+            this.txtposEmp.Location = new System.Drawing.Point(100, 83);
+            this.txtposEmp.Name = "txtposEmp";
+            this.txtposEmp.Size = new System.Drawing.Size(167, 20);
+            this.txtposEmp.TabIndex = 10;
             // 
-            // textBox7
+            // txtsurnameEmp
             // 
-            this.textBox7.Location = new System.Drawing.Point(100, 57);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(167, 20);
-            this.textBox7.TabIndex = 9;
+            this.txtsurnameEmp.Location = new System.Drawing.Point(100, 57);
+            this.txtsurnameEmp.Name = "txtsurnameEmp";
+            this.txtsurnameEmp.Size = new System.Drawing.Size(167, 20);
+            this.txtsurnameEmp.TabIndex = 9;
             // 
-            // textBox8
+            // txtnameEmp
             // 
-            this.textBox8.Location = new System.Drawing.Point(100, 31);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(167, 20);
-            this.textBox8.TabIndex = 8;
+            this.txtnameEmp.Location = new System.Drawing.Point(100, 31);
+            this.txtnameEmp.Name = "txtnameEmp";
+            this.txtnameEmp.Size = new System.Drawing.Size(167, 20);
+            this.txtnameEmp.TabIndex = 8;
             // 
             // label1
             // 
@@ -363,6 +366,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
             this.radioButton3.Location = new System.Drawing.Point(28, 31);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(96, 17);
@@ -393,10 +397,12 @@
             this.radioButton9.TabStop = true;
             this.radioButton9.Text = "Don\'t add";
             this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton9_CheckedChanged);
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
+            this.radioButton5.Checked = true;
             this.radioButton5.Location = new System.Drawing.Point(31, 28);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(79, 17);
@@ -407,18 +413,18 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox18);
+            this.groupBox4.Controls.Add(this.txtgenreMov);
             this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.formatMov_cmb);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.textBox15);
+            this.groupBox4.Controls.Add(this.txtdurMov);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.textBox14);
+            this.groupBox4.Controls.Add(this.txtReleaseMov);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.textBox10);
-            this.groupBox4.Controls.Add(this.textBox11);
-            this.groupBox4.Controls.Add(this.textBox12);
-            this.groupBox4.Controls.Add(this.textBox13);
+            this.groupBox4.Controls.Add(this.txtoriginMov);
+            this.groupBox4.Controls.Add(this.txtpriceMov);
+            this.groupBox4.Controls.Add(this.txtdirectMov);
+            this.groupBox4.Controls.Add(this.txtTitlemov);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label9);
@@ -430,12 +436,12 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Credentials:";
             // 
-            // textBox18
+            // txtgenreMov
             // 
-            this.textBox18.Location = new System.Drawing.Point(292, 54);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(56, 20);
-            this.textBox18.TabIndex = 19;
+            this.txtgenreMov.Location = new System.Drawing.Point(292, 54);
+            this.txtgenreMov.Name = "txtgenreMov";
+            this.txtgenreMov.Size = new System.Drawing.Size(56, 20);
+            this.txtgenreMov.TabIndex = 19;
             // 
             // label19
             // 
@@ -446,13 +452,13 @@
             this.label19.TabIndex = 18;
             this.label19.Text = "Genre:";
             // 
-            // comboBox2
+            // formatMov_cmb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(91, 174);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 21);
-            this.comboBox2.TabIndex = 17;
+            this.formatMov_cmb.FormattingEnabled = true;
+            this.formatMov_cmb.Location = new System.Drawing.Point(91, 174);
+            this.formatMov_cmb.Name = "formatMov_cmb";
+            this.formatMov_cmb.Size = new System.Drawing.Size(130, 21);
+            this.formatMov_cmb.TabIndex = 17;
             // 
             // label13
             // 
@@ -463,12 +469,12 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "Format: ";
             // 
-            // textBox15
+            // txtdurMov
             // 
-            this.textBox15.Location = new System.Drawing.Point(282, 146);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(56, 20);
-            this.textBox15.TabIndex = 15;
+            this.txtdurMov.Location = new System.Drawing.Point(282, 146);
+            this.txtdurMov.Name = "txtdurMov";
+            this.txtdurMov.Size = new System.Drawing.Size(56, 20);
+            this.txtdurMov.TabIndex = 15;
             // 
             // label12
             // 
@@ -479,12 +485,12 @@
             this.label12.TabIndex = 14;
             this.label12.Text = "Duration(minutes):";
             // 
-            // textBox14
+            // txtReleaseMov
             // 
-            this.textBox14.Location = new System.Drawing.Point(91, 146);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(56, 20);
-            this.textBox14.TabIndex = 13;
+            this.txtReleaseMov.Location = new System.Drawing.Point(91, 146);
+            this.txtReleaseMov.Name = "txtReleaseMov";
+            this.txtReleaseMov.Size = new System.Drawing.Size(56, 20);
+            this.txtReleaseMov.TabIndex = 13;
             // 
             // label11
             // 
@@ -495,33 +501,33 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "Year of release: ";
             // 
-            // textBox10
+            // txtoriginMov
             // 
-            this.textBox10.Location = new System.Drawing.Point(91, 110);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(167, 20);
-            this.textBox10.TabIndex = 11;
+            this.txtoriginMov.Location = new System.Drawing.Point(91, 110);
+            this.txtoriginMov.Name = "txtoriginMov";
+            this.txtoriginMov.Size = new System.Drawing.Size(167, 20);
+            this.txtoriginMov.TabIndex = 11;
             // 
-            // textBox11
+            // txtpriceMov
             // 
-            this.textBox11.Location = new System.Drawing.Point(91, 83);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(167, 20);
-            this.textBox11.TabIndex = 10;
+            this.txtpriceMov.Location = new System.Drawing.Point(91, 83);
+            this.txtpriceMov.Name = "txtpriceMov";
+            this.txtpriceMov.Size = new System.Drawing.Size(167, 20);
+            this.txtpriceMov.TabIndex = 10;
             // 
-            // textBox12
+            // txtdirectMov
             // 
-            this.textBox12.Location = new System.Drawing.Point(91, 54);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(167, 20);
-            this.textBox12.TabIndex = 9;
+            this.txtdirectMov.Location = new System.Drawing.Point(91, 54);
+            this.txtdirectMov.Name = "txtdirectMov";
+            this.txtdirectMov.Size = new System.Drawing.Size(167, 20);
+            this.txtdirectMov.TabIndex = 9;
             // 
-            // textBox13
+            // txtTitlemov
             // 
-            this.textBox13.Location = new System.Drawing.Point(91, 28);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(167, 20);
-            this.textBox13.TabIndex = 8;
+            this.txtTitlemov.Location = new System.Drawing.Point(91, 28);
+            this.txtTitlemov.Name = "txtTitlemov";
+            this.txtTitlemov.Size = new System.Drawing.Size(167, 20);
+            this.txtTitlemov.TabIndex = 8;
             // 
             // label7
             // 
@@ -616,13 +622,14 @@
             this.radioButton10.Name = "radioButton10";
             this.radioButton10.Size = new System.Drawing.Size(71, 17);
             this.radioButton10.TabIndex = 10;
-            this.radioButton10.TabStop = true;
             this.radioButton10.Text = "Don\'t add";
             this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
             // 
             // radioButton12
             // 
             this.radioButton12.AutoSize = true;
+            this.radioButton12.Checked = true;
             this.radioButton12.Location = new System.Drawing.Point(35, 28);
             this.radioButton12.Name = "radioButton12";
             this.radioButton12.Size = new System.Drawing.Size(106, 17);
@@ -633,15 +640,15 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox17);
+            this.groupBox6.Controls.Add(this.txtdateTrans);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.textBox16);
+            this.groupBox6.Controls.Add(this.txtquantityTrans);
             this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Controls.Add(this.comboBox5);
+            this.groupBox6.Controls.Add(this.movietrans_cmb);
             this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Controls.Add(this.comboBox4);
+            this.groupBox6.Controls.Add(this.emptrans_cmb);
             this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Controls.Add(this.comboBox3);
+            this.groupBox6.Controls.Add(this.customertrans_cmb);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Location = new System.Drawing.Point(19, 61);
             this.groupBox6.Name = "groupBox6";
@@ -650,12 +657,12 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Credentials:";
             // 
-            // textBox17
+            // txtdateTrans
             // 
-            this.textBox17.Location = new System.Drawing.Point(132, 122);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 20);
-            this.textBox17.TabIndex = 23;
+            this.txtdateTrans.Location = new System.Drawing.Point(132, 122);
+            this.txtdateTrans.Name = "txtdateTrans";
+            this.txtdateTrans.Size = new System.Drawing.Size(100, 20);
+            this.txtdateTrans.TabIndex = 23;
             // 
             // label18
             // 
@@ -666,12 +673,12 @@
             this.label18.TabIndex = 16;
             this.label18.Text = "Purchase Date(Y.M.D):";
             // 
-            // textBox16
+            // txtquantityTrans
             // 
-            this.textBox16.Location = new System.Drawing.Point(282, 122);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(66, 20);
-            this.textBox16.TabIndex = 16;
+            this.txtquantityTrans.Location = new System.Drawing.Point(282, 122);
+            this.txtquantityTrans.Name = "txtquantityTrans";
+            this.txtquantityTrans.Size = new System.Drawing.Size(66, 20);
+            this.txtquantityTrans.TabIndex = 16;
             // 
             // label17
             // 
@@ -682,13 +689,13 @@
             this.label17.TabIndex = 22;
             this.label17.Text = "Quantity:";
             // 
-            // comboBox5
+            // movietrans_cmb
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(91, 90);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(167, 21);
-            this.comboBox5.TabIndex = 21;
+            this.movietrans_cmb.FormattingEnabled = true;
+            this.movietrans_cmb.Location = new System.Drawing.Point(91, 90);
+            this.movietrans_cmb.Name = "movietrans_cmb";
+            this.movietrans_cmb.Size = new System.Drawing.Size(167, 21);
+            this.movietrans_cmb.TabIndex = 21;
             // 
             // label16
             // 
@@ -699,13 +706,13 @@
             this.label16.TabIndex = 20;
             this.label16.Text = "Movie:";
             // 
-            // comboBox4
+            // emptrans_cmb
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(91, 58);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(167, 21);
-            this.comboBox4.TabIndex = 19;
+            this.emptrans_cmb.FormattingEnabled = true;
+            this.emptrans_cmb.Location = new System.Drawing.Point(91, 58);
+            this.emptrans_cmb.Name = "emptrans_cmb";
+            this.emptrans_cmb.Size = new System.Drawing.Size(167, 21);
+            this.emptrans_cmb.TabIndex = 19;
             // 
             // label15
             // 
@@ -716,13 +723,13 @@
             this.label15.TabIndex = 18;
             this.label15.Text = "Employee:";
             // 
-            // comboBox3
+            // customertrans_cmb
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(91, 27);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(167, 21);
-            this.comboBox3.TabIndex = 17;
+            this.customertrans_cmb.FormattingEnabled = true;
+            this.customertrans_cmb.Location = new System.Drawing.Point(91, 27);
+            this.customertrans_cmb.Name = "customertrans_cmb";
+            this.customertrans_cmb.Size = new System.Drawing.Size(167, 21);
+            this.customertrans_cmb.TabIndex = 17;
             // 
             // label14
             // 
@@ -775,41 +782,41 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox newcustom_grpbox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtnameCustomer;
+        private System.Windows.Forms.TextBox txtPhoneCustom;
+        private System.Windows.Forms.TextBox txtemailCustom;
+        private System.Windows.Forms.TextBox txtsurnameCustomer;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox newemp_grpbox;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txthireEmp;
+        private System.Windows.Forms.TextBox txtposEmp;
+        private System.Windows.Forms.TextBox txtsurnameEmp;
+        private System.Windows.Forms.TextBox txtnameEmp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox managedemp_cmb;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtsalEmp;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtoriginMov;
+        private System.Windows.Forms.TextBox txtpriceMov;
+        private System.Windows.Forms.TextBox txtdirectMov;
+        private System.Windows.Forms.TextBox txtTitlemov;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox formatMov_cmb;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtdurMov;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtReleaseMov;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -821,17 +828,17 @@
         private System.Windows.Forms.RadioButton radioButton10;
         private System.Windows.Forms.RadioButton radioButton12;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox customertrans_cmb;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox emptrans_cmb;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox movietrans_cmb;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtquantityTrans;
+        private System.Windows.Forms.TextBox txtdateTrans;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox txtgenreMov;
     }
 }

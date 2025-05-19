@@ -34,20 +34,68 @@ namespace Kursadarbs
             try
             {
                 Loader.LoadEmployees();
-                dataGridView1.DataSource = Loader.EmployeeTable;
+                dataGridView1.DataSource = Loader.EmployeeTable.DefaultView;
 
                 if (dataGridView1.Columns.Contains("ID_EMPLOYEE"))
                     dataGridView1.Columns["ID_EMPLOYEE"].Visible = false;
 
-                if (dataGridView1.Columns.Contains("MANAGER_ID"))
-                    dataGridView1.Columns["MANAGER_ID"].Visible = false;
+                NormalizeColumnHeaders();
+
+                ReplaceManagerIdWithDropdown();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        private void ReplaceManagerIdWithDropdown()
+        {
+            if (!Loader.EmployeeTable.Columns.Contains("MANAGER_ID"))
+                return;
 
+            // Get unique non-null MANAGER_IDs as objects
+            var uniqueManagers = Loader.EmployeeTable
+                .AsEnumerable()
+                .Select(row => row["MANAGER_ID"])
+                .Where(val => val != DBNull.Value)
+                .Distinct()
+                .ToList();
+
+            if (uniqueManagers.Count > 20)
+                return;
+
+            // Build a list of ID_EMPLOYEE + Full Name
+            DataTable managerList = Loader.EmployeeTable.DefaultView.ToTable(true, "ID_EMPLOYEE", "NAME", "SURNAME");
+            managerList.Columns["ID_EMPLOYEE"].ColumnName = "ManagerID";
+
+            managerList.Columns.Add("FullName", typeof(string));
+            foreach (DataRow row in managerList.Rows)
+            {
+                string name = row["NAME"] != DBNull.Value ? row["NAME"].ToString() : "";
+                string surname = row["SURNAME"] != DBNull.Value ? row["SURNAME"].ToString() : "";
+                row["FullName"] = $"{name} {surname}".Trim();
+            }
+
+            // Remove MANAGER_ID column from DataGridView (not the DataTable!)
+            if (dataGridView1.Columns.Contains("MANAGER_ID"))
+                dataGridView1.Columns.Remove("MANAGER_ID");
+
+            // Add ComboBoxColumn
+            DataGridViewComboBoxColumn comboColumn = new DataGridViewComboBoxColumn
+            {
+                Name = "MANAGER_ID",
+                HeaderText = "Managed By",
+                DataPropertyName = "MANAGER_ID",
+                DataSource = managerList,
+                ValueMember = "ManagerID",
+                DisplayMember = "FullName",
+                DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton,
+                FlatStyle = FlatStyle.Flat
+            };
+
+            dataGridView1.Columns.Add(comboColumn);
+        }
         private void Employees_Load(object sender, EventArgs e)
         {
             
@@ -116,15 +164,7 @@ namespace Kursadarbs
             };
             hiarch_radio.MouseLeave += ClearHoverLabels;
 
-            sortgrp_box.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Sorting section";
-                desc_label.Text = "Use this if you want to sort data in a specific way. It sorts from Z - A by default.";
-            };
-            sortgrp_box.MouseLeave += ClearHoverLabels;
+            
 
             savech_btn.MouseEnter += (s, e) =>
             {
@@ -191,10 +231,32 @@ namespace Kursadarbs
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if (Loader.EmployeeTable == null || Loader.EmployeeTable.Columns.Count == 0)
+                return;
 
+            string searchText = filtr_txtbox.Text.Trim().Replace("'", "''");
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                Loader.EmployeeTable.DefaultView.RowFilter = string.Empty;
+                return;
+            }
+
+            List<string> filterConditions = new List<string>();
+
+            foreach (DataColumn column in Loader.EmployeeTable.Columns)
+            {
+                if (column.DataType == typeof(string))
+                {
+                    // Wrap column name in brackets to prevent issues with special characters
+                    filterConditions.Add($"[{column.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            Loader.EmployeeTable.DefaultView.RowFilter = string.Join(" OR ", filterConditions);
         }
 
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
             AddEmployee f = new AddEmployee();
@@ -235,6 +297,34 @@ namespace Kursadarbs
         private void title_label_Click(object sender, EventArgs e)
         {
 
+        }
+        private void NormalizeColumnHeaders()
+        {
+            Dictionary<string, string> headerMappings = new Dictionary<string, string>()
+             {
+                { "NAME", "Name" },
+                { "SURNAME", "Surname" },
+                { "EMAIL", "E-mail" },
+                { "PHONE", "Contact" },
+                { "ADDRESS", "Address" },
+                { "CITY", "City" },
+                { "ZIP", "ZIP Code" },
+                { "COUNTRY", "Country" },
+                { "POSITION", "Position" },
+                { "SALARY", "Salary" },
+                { "HIRE_DATE", "Hire Date" },
+                { "MANAGER_ID", "Managed By" },
+                { "ID_EMPLOYEE", "Employee ID" },
+        // Add more mappings as needed
+            };
+
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                if (headerMappings.ContainsKey(column.Name))
+                {
+                    column.HeaderText = headerMappings[column.Name];
+                }
+            }
         }
     }
 }
