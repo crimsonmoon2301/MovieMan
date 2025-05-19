@@ -39,6 +39,37 @@ namespace Kursadarbs
             SetupButtonHover();
             LoadMovieData();
 
+            // Populate Genre ComboBox
+            genre_combbox.Items.Clear();
+            genre_combbox.Items.Add("All");
+
+            var genres = Loader.MovieTypeTable.AsEnumerable()
+                      .Select(row => row.Field<string>("GENRE"))
+                      .Distinct()
+                      .Where(g => !string.IsNullOrEmpty(g))
+                      .OrderBy(g => g)
+                      .ToList();
+
+            genre_combbox.Items.Clear();
+            genre_combbox.Items.Add("All"); // Optional to show everything
+            genre_combbox.Items.AddRange(genres.ToArray());
+            genre_combbox.SelectedIndex = 0;
+
+            //foarmāti
+            // Get unique formats
+            var formats = Loader.MovieTypeTable.AsEnumerable()
+                .Select(row => row.Field<string>("FORMAT"))
+                .Distinct()
+                .Where(f => !string.IsNullOrEmpty(f))
+                .OrderBy(f => f)
+                .ToList();
+
+            formt_combbox.Items.Clear();
+            formt_combbox.Items.Add("All"); // optional
+            formt_combbox.Items.AddRange(formats.ToArray());
+            formt_combbox.SelectedIndex = 0;
+
+
             if (dataGridView1.Columns.Contains("ID_MOVIE"))
                 dataGridView1.Columns["ID_MOVIE"].Visible = false;
             if (dataGridView2.Columns.Contains("ID_MOVIETYPE"))
@@ -183,8 +214,6 @@ namespace Kursadarbs
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            // gotta fix this but class works ig
             string selectedGenre = genre_combbox.SelectedItem.ToString();
 
             if (selectedGenre == "All")
