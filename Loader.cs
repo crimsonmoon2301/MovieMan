@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -86,16 +87,29 @@ namespace Kursadarbs
                         MovieConnection.Close();
                     MovieConnection.Dispose();
                 }
-
                 MovieConnection = new OracleConnection(connectionString);
 
                 // Create and fill Movies table
                 MovieAdapter = new OracleDataAdapter("SELECT * FROM MOVIES", MovieConnection);
+
+                // Configure CommandBuilder for Movies
+                OracleCommandBuilder movieBuilder = new OracleCommandBuilder(MovieAdapter);
+                MovieAdapter.InsertCommand = movieBuilder.GetInsertCommand();
+                MovieAdapter.UpdateCommand = movieBuilder.GetUpdateCommand();
+                MovieAdapter.DeleteCommand = movieBuilder.GetDeleteCommand();
+
                 MovieTable = new DataTable("Movies");
                 MovieAdapter.Fill(MovieTable);
 
                 // Create and fill MovieType table
                 MovieTypeAdapter = new OracleDataAdapter("SELECT * FROM MOVIE_TYPE", MovieConnection);
+
+                // Configure CommandBuilder for MovieType
+                OracleCommandBuilder typeBuilder = new OracleCommandBuilder(MovieTypeAdapter);
+                MovieTypeAdapter.InsertCommand = typeBuilder.GetInsertCommand();
+                MovieTypeAdapter.UpdateCommand = typeBuilder.GetUpdateCommand();
+                MovieTypeAdapter.DeleteCommand = typeBuilder.GetDeleteCommand();
+
                 MovieTypeTable = new DataTable("Movie_Type");
                 MovieTypeAdapter.Fill(MovieTypeTable);
 
@@ -103,12 +117,9 @@ namespace Kursadarbs
                 MovieDataSet = new DataSet();
                 MovieDataSet.Tables.Add(MovieTable);
                 MovieDataSet.Tables.Add(MovieTypeTable);
-
-                // We'll skip the relation for now to simplify troubleshooting
             }
             catch (Exception ex)
             {
-                // Detailed error information
                 throw new Exception($"Error in LoadMovies: {ex.Message}\nStack Trace: {ex.StackTrace}");
             }
         }

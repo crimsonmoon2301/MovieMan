@@ -76,26 +76,6 @@ namespace Kursadarbs
 
         private void SetupButtonHover()
         {
-            refrsh_btn.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Refresh data";
-                desc_label.Text = "Use this if the view is bugged.";
-            };
-            refrsh_btn.MouseLeave += ClearHoverLabels;
-
-            edit_btn.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Configure an entry";
-                desc_label.Text = "Adjust a entry for a movie";
-            };
-            edit_btn.MouseLeave += ClearHoverLabels;
-
             add_btn.MouseEnter += (s, e) =>
             {
                 title_label.Visible = true;
@@ -311,11 +291,38 @@ namespace Kursadarbs
 
         }
 
-        private void edit_btn_Click(object sender, EventArgs e)
+        private void savech_btn_Click(object sender, EventArgs e)
         {
-            ConfigureMovie f = new ConfigureMovie();
-            f.MdiParent = EmployeeForm.ActiveForm;
-            f.Show();
+            try
+            {
+                Loader.MovieAdapter.Update(Loader.MovieTable);
+                Loader.MovieTypeAdapter.Update(Loader.MovieTypeTable);
+                MessageBox.Show("Changes saved successfully.");
+
+                RefreshMovieTables(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save changes: " + ex.Message);
+            }
         }
+
+        private void RefreshMovieTables()
+        {
+            try
+            {
+                Loader.LoadMovies(); // reload from DB
+                dataGridView1.DataSource = Loader.MovieTable;
+                dataGridView2.DataSource = Loader.MovieTypeTable;
+
+                if (dataGridView1.Columns.Contains("ID_MOVIE"))
+                    dataGridView1.Columns["ID_MOVIE"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to refresh: " + ex.Message);
+            }
+        }
+
     }
 }

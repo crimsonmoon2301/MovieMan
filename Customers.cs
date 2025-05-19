@@ -62,26 +62,6 @@ namespace Kursadarbs
 
         private void SetupButtonHover()
         {
-            refrsh_btn.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Refresh data";
-                desc_label.Text = "Use this if the view is bugged.";
-            };
-            refrsh_btn.MouseLeave += ClearHoverLabels;
-
-            edit_btn.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Edit Customer";
-                desc_label.Text = "Adjust credentials for a customer.";
-            };
-            edit_btn.MouseLeave += ClearHoverLabels;
-
             add_btn.MouseEnter += (s, e) =>
             {
                 title_label.Visible = true;
@@ -158,17 +138,7 @@ namespace Kursadarbs
             
         }
 
-        private void edit_btn_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.CurrentRow != null)
-            {
-                int rowIndex = dataGridView1.CurrentRow.Index;
-                ConfigureCustomer form = new ConfigureCustomer(rowIndex);
-                form.MdiParent = EmployeeForm.ActiveForm;
-                form.Show();
-            }
-        }
-
+       
         private void savech_btn_Click(object sender, EventArgs e)
         {
             try

@@ -66,26 +66,6 @@ namespace Kursadarbs
 
         private void SetupButtonHover()
         {
-            refrsh_btn.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Refresh data";
-                desc_label.Text = "Use this if the view is bugged.";
-            };
-            refrsh_btn.MouseLeave += ClearHoverLabels;
-
-            edit_btn.MouseEnter += (s, e) =>
-            {
-                title_label.Visible= true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Edit Employee";
-                desc_label.Text = "Adjust credentials for an employee.";
-            };
-            edit_btn.MouseLeave += ClearHoverLabels;
-
             add_btn.MouseEnter += (s, e) =>
             {
                 title_label.Visible = true;
@@ -214,13 +194,7 @@ namespace Kursadarbs
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            EditEmployee f = new EditEmployee();
-            f.MdiParent = EmployeeForm.ActiveForm;
-            f.Show();
-        }
-
+        
         private void button3_Click(object sender, EventArgs e)
         {
             AddEmployee f = new AddEmployee();
@@ -230,7 +204,32 @@ namespace Kursadarbs
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                Loader.Adapter.Update(Loader.EmployeeTable);
+                MessageBox.Show("Changes saved successfully.");
 
+                RefreshEmployeeTable(); // see step 2
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save changes: " + ex.Message);
+            }
+        }
+        private void RefreshEmployeeTable()
+        {
+            try
+            {
+                Loader.LoadEmployees(); // reload from DB
+                dataGridView1.DataSource = Loader.EmployeeTable;
+
+                if (dataGridView1.Columns.Contains("ID_EMPLOYEE"))
+                    dataGridView1.Columns["ID_EMPLOYEE"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to refresh: " + ex.Message);
+            }
         }
 
         private void title_label_Click(object sender, EventArgs e)

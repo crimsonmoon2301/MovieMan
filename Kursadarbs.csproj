@@ -107,35 +107,17 @@
     <Compile Include="AddTransaction.Designer.cs">
       <DependentUpon>AddTransaction.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfigureCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConfigureCustomer.Designer.cs">
-      <DependentUpon>ConfigureCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ConfigureMovie.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConfigureMovie.Designer.cs">
-      <DependentUpon>ConfigureMovie.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditEmployee.cs">
+    <Compile Include="EmployeeHiarchy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditEmployee.Designer.cs">
-      <DependentUpon>EditEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditTransaction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditTransaction.Designer.cs">
-      <DependentUpon>EditTransaction.cs</DependentUpon>
+    <Compile Include="EmployeeHiarchy.Designer.cs">
+      <DependentUpon>EmployeeHiarchy.cs</DependentUpon>
     </Compile>
     <Compile Include="Employees.cs">
       <SubType>Form</SubType>
@@ -183,20 +165,11 @@
     <EmbeddedResource Include="AddTransaction.resx">
       <DependentUpon>AddTransaction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfigureCustomer.resx">
-      <DependentUpon>ConfigureCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConfigureMovie.resx">
-      <DependentUpon>ConfigureMovie.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditEmployee.resx">
-      <DependentUpon>EditEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditTransaction.resx">
-      <DependentUpon>EditTransaction.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeeHiarchy.resx">
+      <DependentUpon>EmployeeHiarchy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>

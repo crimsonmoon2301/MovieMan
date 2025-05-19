@@ -69,26 +69,6 @@ namespace Kursadarbs
 
         private void SetupButtonHover()
         {
-            refrsh_btn.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Refresh data";
-                desc_label.Text = "Use this if the view is bugged.";
-            };
-            refrsh_btn.MouseLeave += ClearHoverLabels;
-
-            edit_btn.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Configure an entry";
-                desc_label.Text = "Adjust a entry for a transaction";
-            };
-            edit_btn.MouseLeave += ClearHoverLabels;
-
             add_btn.MouseEnter += (s, e) =>
             {
                 title_label.Visible = true;
@@ -115,7 +95,7 @@ namespace Kursadarbs
                 desc_label.Visible = true;
 
                 title_label.Text = "Sorting section";
-                desc_label.Text = "Use this if you want to sort data in a specific way. It sorts from Z - A by default.";
+                desc_label.Text = "Use this if you want to sort data in a specific way.";
             };
             sortgrp_box.MouseLeave += ClearHoverLabels;
 
@@ -138,13 +118,6 @@ namespace Kursadarbs
         private void add_btn_Click(object sender, EventArgs e)
         {
             AddTransaction f = new AddTransaction();
-            f.MdiParent = EmployeeForm.ActiveForm;
-            f.Show();
-        }
-
-        private void edit_btn_Click(object sender, EventArgs e)
-        {
-            EditTransaction f = new EditTransaction();
             f.MdiParent = EmployeeForm.ActiveForm;
             f.Show();
         }

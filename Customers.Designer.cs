@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.filtr_txtbox = new System.Windows.Forms.TextBox();
             this.sortgrp_box = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -40,10 +41,13 @@
             this.desc_label = new System.Windows.Forms.Label();
             this.title_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.edit_btn = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
-            this.refrsh_btn = new System.Windows.Forms.Button();
             this.savech_btn = new System.Windows.Forms.Button();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.sortgrp_box.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,16 +93,32 @@
             // 
             // sortgrp_box
             // 
+            this.sortgrp_box.Controls.Add(this.checkBox8);
+            this.sortgrp_box.Controls.Add(this.checkBox7);
+            this.sortgrp_box.Controls.Add(this.checkBox6);
+            this.sortgrp_box.Controls.Add(this.checkBox5);
+            this.sortgrp_box.Controls.Add(this.checkBox2);
             this.sortgrp_box.Controls.Add(this.checkBox4);
             this.sortgrp_box.Controls.Add(this.checkBox3);
             this.sortgrp_box.Controls.Add(this.checkBox1);
             this.sortgrp_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sortgrp_box.Location = new System.Drawing.Point(336, 349);
+            this.sortgrp_box.Location = new System.Drawing.Point(227, 349);
             this.sortgrp_box.Name = "sortgrp_box";
-            this.sortgrp_box.Size = new System.Drawing.Size(114, 112);
+            this.sortgrp_box.Size = new System.Drawing.Size(223, 126);
             this.sortgrp_box.TabIndex = 25;
             this.sortgrp_box.TabStop = false;
             this.sortgrp_box.Text = "Sort by:";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(6, 93);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(99, 17);
+            this.checkBox2.TabIndex = 6;
+            this.checkBox2.Text = "Number (0 - 10)";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox4
             // 
@@ -106,9 +126,9 @@
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox4.Location = new System.Drawing.Point(6, 70);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(92, 17);
+            this.checkBox4.Size = new System.Drawing.Size(77, 17);
             this.checkBox4.TabIndex = 5;
-            this.checkBox4.Text = "Highest salary";
+            this.checkBox4.Text = "Email (A-Z)";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3
@@ -117,9 +137,9 @@
             this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox3.Location = new System.Drawing.Point(6, 47);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(95, 17);
+            this.checkBox3.Size = new System.Drawing.Size(94, 17);
             this.checkBox3.TabIndex = 4;
-            this.checkBox3.Text = "Position (A - Z)";
+            this.checkBox3.Text = "Surname (A-Z)";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox1
@@ -128,9 +148,9 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(6, 24);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(69, 17);
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Hire date";
+            this.checkBox1.Text = "Name (A-Z)";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -171,33 +191,15 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.edit_btn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.add_btn, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.refrsh_btn, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.savech_btn, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.savech_btn, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(111, 307);
             this.tableLayoutPanel1.TabIndex = 14;
-            // 
-            // edit_btn
-            // 
-            this.edit_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_btn.Location = new System.Drawing.Point(8, 84);
-            this.edit_btn.Margin = new System.Windows.Forms.Padding(8);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Padding = new System.Windows.Forms.Padding(10);
-            this.edit_btn.Size = new System.Drawing.Size(95, 60);
-            this.edit_btn.TabIndex = 13;
-            this.edit_btn.Text = "Configure Customer";
-            this.edit_btn.UseVisualStyleBackColor = true;
-            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // add_btn
             // 
@@ -206,44 +208,85 @@
             this.add_btn.Location = new System.Drawing.Point(8, 8);
             this.add_btn.Margin = new System.Windows.Forms.Padding(8);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(95, 60);
+            this.add_btn.Size = new System.Drawing.Size(95, 137);
             this.add_btn.TabIndex = 12;
             this.add_btn.Text = "Add new customer";
             this.add_btn.UseVisualStyleBackColor = true;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
-            // 
-            // refrsh_btn
-            // 
-            this.refrsh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refrsh_btn.Location = new System.Drawing.Point(8, 236);
-            this.refrsh_btn.Margin = new System.Windows.Forms.Padding(8);
-            this.refrsh_btn.Name = "refrsh_btn";
-            this.refrsh_btn.Padding = new System.Windows.Forms.Padding(10);
-            this.refrsh_btn.Size = new System.Drawing.Size(95, 63);
-            this.refrsh_btn.TabIndex = 10;
-            this.refrsh_btn.Text = "Refresh data";
-            this.refrsh_btn.UseVisualStyleBackColor = true;
-            this.refrsh_btn.Click += new System.EventHandler(this.refrsh_btn_Click);
             // 
             // savech_btn
             // 
             this.savech_btn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.savech_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savech_btn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.savech_btn.Location = new System.Drawing.Point(8, 160);
+            this.savech_btn.Location = new System.Drawing.Point(8, 161);
             this.savech_btn.Margin = new System.Windows.Forms.Padding(8);
             this.savech_btn.Name = "savech_btn";
-            this.savech_btn.Size = new System.Drawing.Size(95, 60);
+            this.savech_btn.Size = new System.Drawing.Size(95, 138);
             this.savech_btn.TabIndex = 11;
             this.savech_btn.Text = "Save changes made";
             this.savech_btn.UseVisualStyleBackColor = true;
             this.savech_btn.Click += new System.EventHandler(this.savech_btn_Click);
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox5.Location = new System.Drawing.Point(117, 24);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(80, 17);
+            this.checkBox5.TabIndex = 7;
+            this.checkBox5.Text = "Name (Z-A)";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(117, 47);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(94, 17);
+            this.checkBox6.TabIndex = 8;
+            this.checkBox6.Text = "Surname (Z-A)";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox7.Location = new System.Drawing.Point(117, 70);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(77, 17);
+            this.checkBox7.TabIndex = 9;
+            this.checkBox7.Text = "Email (Z-A)";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox8.Location = new System.Drawing.Point(117, 93);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(99, 17);
+            this.checkBox8.TabIndex = 10;
+            this.checkBox8.Text = "Number (10 - 0)";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(18, 393);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Apply Filter";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 487);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.sortgrp_box);
             this.Controls.Add(this.label1);
@@ -276,11 +319,15 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button refrsh_btn;
         private System.Windows.Forms.Button savech_btn;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Label desc_label;
         private System.Windows.Forms.Label title_label;
-        private System.Windows.Forms.Button edit_btn;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.Button button1;
     }
 }

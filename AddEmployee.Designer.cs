@@ -30,14 +30,14 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.newemp_grpbox = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbManager = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtHireDate = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,14 +62,14 @@
             // 
             // newemp_grpbox
             // 
-            this.newemp_grpbox.Controls.Add(this.comboBox1);
+            this.newemp_grpbox.Controls.Add(this.cmbManager);
             this.newemp_grpbox.Controls.Add(this.label6);
-            this.newemp_grpbox.Controls.Add(this.textBox9);
+            this.newemp_grpbox.Controls.Add(this.txtSalary);
             this.newemp_grpbox.Controls.Add(this.label5);
-            this.newemp_grpbox.Controls.Add(this.textBox5);
-            this.newemp_grpbox.Controls.Add(this.textBox6);
-            this.newemp_grpbox.Controls.Add(this.textBox7);
-            this.newemp_grpbox.Controls.Add(this.textBox8);
+            this.newemp_grpbox.Controls.Add(this.txtHireDate);
+            this.newemp_grpbox.Controls.Add(this.txtPosition);
+            this.newemp_grpbox.Controls.Add(this.txtSurname);
+            this.newemp_grpbox.Controls.Add(this.txtName);
             this.newemp_grpbox.Controls.Add(this.label1);
             this.newemp_grpbox.Controls.Add(this.label2);
             this.newemp_grpbox.Controls.Add(this.label3);
@@ -81,13 +81,13 @@
             this.newemp_grpbox.TabStop = false;
             this.newemp_grpbox.Text = "Credentials:";
             // 
-            // comboBox1
+            // cmbManager
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 162);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cmbManager.FormattingEnabled = true;
+            this.cmbManager.Location = new System.Drawing.Point(100, 162);
+            this.cmbManager.Name = "cmbManager";
+            this.cmbManager.Size = new System.Drawing.Size(167, 21);
+            this.cmbManager.TabIndex = 15;
             // 
             // label6
             // 
@@ -98,12 +98,12 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Managed by:";
             // 
-            // textBox9
+            // txtSalary
             // 
-            this.textBox9.Location = new System.Drawing.Point(100, 136);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(167, 20);
-            this.textBox9.TabIndex = 13;
+            this.txtSalary.Location = new System.Drawing.Point(100, 136);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(167, 20);
+            this.txtSalary.TabIndex = 13;
             // 
             // label5
             // 
@@ -114,33 +114,33 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Salary:";
             // 
-            // textBox5
+            // txtHireDate
             // 
-            this.textBox5.Location = new System.Drawing.Point(100, 110);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(167, 20);
-            this.textBox5.TabIndex = 11;
+            this.txtHireDate.Location = new System.Drawing.Point(100, 110);
+            this.txtHireDate.Name = "txtHireDate";
+            this.txtHireDate.Size = new System.Drawing.Size(167, 20);
+            this.txtHireDate.TabIndex = 11;
             // 
-            // textBox6
+            // txtPosition
             // 
-            this.textBox6.Location = new System.Drawing.Point(100, 83);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(167, 20);
-            this.textBox6.TabIndex = 10;
+            this.txtPosition.Location = new System.Drawing.Point(100, 83);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(167, 20);
+            this.txtPosition.TabIndex = 10;
             // 
-            // textBox7
+            // txtSurname
             // 
-            this.textBox7.Location = new System.Drawing.Point(100, 57);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(167, 20);
-            this.textBox7.TabIndex = 9;
+            this.txtSurname.Location = new System.Drawing.Point(100, 57);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(167, 20);
+            this.txtSurname.TabIndex = 9;
             // 
-            // textBox8
+            // txtName
             // 
-            this.textBox8.Location = new System.Drawing.Point(100, 31);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(167, 20);
-            this.textBox8.TabIndex = 8;
+            this.txtName.Location = new System.Drawing.Point(100, 31);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(167, 20);
+            this.txtName.TabIndex = 8;
             // 
             // label1
             // 
@@ -201,6 +201,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Confirm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -211,6 +212,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddEmployee
             // 
@@ -221,6 +223,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "AddEmployee";
             this.Text = "Add a new Employee";
+            this.Load += new System.EventHandler(this.AddEmployee_Load);
             this.groupBox2.ResumeLayout(false);
             this.newemp_grpbox.ResumeLayout(false);
             this.newemp_grpbox.PerformLayout();
@@ -233,14 +236,14 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox newemp_grpbox;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbManager;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtHireDate;
+        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

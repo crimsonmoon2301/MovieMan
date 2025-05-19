@@ -33,9 +33,6 @@
             this.desc_label = new System.Windows.Forms.Label();
             this.title_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.refrsh_btn = new System.Windows.Forms.Button();
-            this.savech_btn = new System.Windows.Forms.Button();
-            this.edit_btn = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.genre_combbox = new System.Windows.Forms.ComboBox();
+            this.savech_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -101,53 +99,15 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.refrsh_btn, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.savech_btn, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.edit_btn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.add_btn, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.savech_btn, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 36);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(109, 366);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // refrsh_btn
-            // 
-            this.refrsh_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.refrsh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refrsh_btn.Location = new System.Drawing.Point(3, 276);
-            this.refrsh_btn.Name = "refrsh_btn";
-            this.refrsh_btn.Size = new System.Drawing.Size(103, 87);
-            this.refrsh_btn.TabIndex = 3;
-            this.refrsh_btn.Text = "Refresh data";
-            this.refrsh_btn.UseVisualStyleBackColor = true;
-            // 
-            // savech_btn
-            // 
-            this.savech_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.savech_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.savech_btn.Location = new System.Drawing.Point(3, 185);
-            this.savech_btn.Name = "savech_btn";
-            this.savech_btn.Size = new System.Drawing.Size(103, 85);
-            this.savech_btn.TabIndex = 2;
-            this.savech_btn.Text = "Save changes";
-            this.savech_btn.UseVisualStyleBackColor = true;
-            // 
-            // edit_btn
-            // 
-            this.edit_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_btn.Location = new System.Drawing.Point(3, 94);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(103, 85);
-            this.edit_btn.TabIndex = 1;
-            this.edit_btn.Text = "Configure existing entry";
-            this.edit_btn.UseVisualStyleBackColor = true;
-            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // add_btn
             // 
@@ -155,7 +115,7 @@
             this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_btn.Location = new System.Drawing.Point(3, 3);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(103, 85);
+            this.add_btn.Size = new System.Drawing.Size(103, 177);
             this.add_btn.TabIndex = 0;
             this.add_btn.Text = "Add new entry";
             this.add_btn.UseVisualStyleBackColor = true;
@@ -244,6 +204,18 @@
             this.genre_combbox.TabIndex = 0;
             this.genre_combbox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // savech_btn
+            // 
+            this.savech_btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.savech_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.savech_btn.Location = new System.Drawing.Point(3, 186);
+            this.savech_btn.Name = "savech_btn";
+            this.savech_btn.Size = new System.Drawing.Size(103, 177);
+            this.savech_btn.TabIndex = 2;
+            this.savech_btn.Text = "Save changes";
+            this.savech_btn.UseVisualStyleBackColor = true;
+            this.savech_btn.Click += new System.EventHandler(this.savech_btn_Click);
+            // 
             // Movies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,9 +246,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Button add_btn;
-        private System.Windows.Forms.Button savech_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -285,9 +255,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox genre_combbox;
-        private System.Windows.Forms.Button refrsh_btn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label desc_label;
         private System.Windows.Forms.Label title_label;
+        private System.Windows.Forms.Button savech_btn;
     }
 }

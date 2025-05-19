@@ -33,22 +33,22 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtGenre = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbFormat = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtDuration = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtOrigin = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtDirector = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -77,6 +77,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Confirm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -87,6 +88,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
             // 
@@ -100,18 +102,18 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.txtGenre);
             this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.cmbFormat);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.textBox15);
+            this.groupBox4.Controls.Add(this.txtDuration);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.textBox14);
+            this.groupBox4.Controls.Add(this.txtYear);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.textBox10);
-            this.groupBox4.Controls.Add(this.textBox11);
-            this.groupBox4.Controls.Add(this.textBox12);
-            this.groupBox4.Controls.Add(this.textBox13);
+            this.groupBox4.Controls.Add(this.txtOrigin);
+            this.groupBox4.Controls.Add(this.txtPrice);
+            this.groupBox4.Controls.Add(this.txtDirector);
+            this.groupBox4.Controls.Add(this.txtTitle);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label9);
@@ -123,6 +125,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Credentials:";
             // 
+            // txtGenre
+            // 
+            this.txtGenre.Location = new System.Drawing.Point(284, 57);
+            this.txtGenre.Name = "txtGenre";
+            this.txtGenre.Size = new System.Drawing.Size(66, 20);
+            this.txtGenre.TabIndex = 19;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -132,13 +141,13 @@
             this.label19.TabIndex = 18;
             this.label19.Text = "Genre:";
             // 
-            // comboBox2
+            // cmbFormat
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(91, 179);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 21);
-            this.comboBox2.TabIndex = 17;
+            this.cmbFormat.FormattingEnabled = true;
+            this.cmbFormat.Location = new System.Drawing.Point(91, 179);
+            this.cmbFormat.Name = "cmbFormat";
+            this.cmbFormat.Size = new System.Drawing.Size(130, 21);
+            this.cmbFormat.TabIndex = 17;
             // 
             // label13
             // 
@@ -149,12 +158,12 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "Format: ";
             // 
-            // textBox15
+            // txtDuration
             // 
-            this.textBox15.Location = new System.Drawing.Point(284, 146);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(66, 20);
-            this.textBox15.TabIndex = 15;
+            this.txtDuration.Location = new System.Drawing.Point(284, 146);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(66, 20);
+            this.txtDuration.TabIndex = 15;
             // 
             // label12
             // 
@@ -165,12 +174,12 @@
             this.label12.TabIndex = 14;
             this.label12.Text = "Duration(minutes):";
             // 
-            // textBox14
+            // txtYear
             // 
-            this.textBox14.Location = new System.Drawing.Point(91, 146);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(56, 20);
-            this.textBox14.TabIndex = 13;
+            this.txtYear.Location = new System.Drawing.Point(91, 146);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(56, 20);
+            this.txtYear.TabIndex = 13;
             // 
             // label11
             // 
@@ -181,33 +190,33 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "Year of release: ";
             // 
-            // textBox10
+            // txtOrigin
             // 
-            this.textBox10.Location = new System.Drawing.Point(91, 110);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(167, 20);
-            this.textBox10.TabIndex = 11;
+            this.txtOrigin.Location = new System.Drawing.Point(91, 110);
+            this.txtOrigin.Name = "txtOrigin";
+            this.txtOrigin.Size = new System.Drawing.Size(167, 20);
+            this.txtOrigin.TabIndex = 11;
             // 
-            // textBox11
+            // txtPrice
             // 
-            this.textBox11.Location = new System.Drawing.Point(91, 83);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(167, 20);
-            this.textBox11.TabIndex = 10;
+            this.txtPrice.Location = new System.Drawing.Point(91, 83);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(167, 20);
+            this.txtPrice.TabIndex = 10;
             // 
-            // textBox12
+            // txtDirector
             // 
-            this.textBox12.Location = new System.Drawing.Point(91, 54);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(167, 20);
-            this.textBox12.TabIndex = 9;
+            this.txtDirector.Location = new System.Drawing.Point(91, 54);
+            this.txtDirector.Name = "txtDirector";
+            this.txtDirector.Size = new System.Drawing.Size(167, 20);
+            this.txtDirector.TabIndex = 9;
             // 
-            // textBox13
+            // txtTitle
             // 
-            this.textBox13.Location = new System.Drawing.Point(91, 28);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(167, 20);
-            this.textBox13.TabIndex = 8;
+            this.txtTitle.Location = new System.Drawing.Point(91, 28);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(167, 20);
+            this.txtTitle.TabIndex = 8;
             // 
             // label7
             // 
@@ -245,13 +254,6 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "Price:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(284, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(66, 20);
-            this.textBox1.TabIndex = 19;
-            // 
             // AddNewMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,20 +279,20 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbFormat;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtDuration;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtOrigin;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtDirector;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGenre;
     }
 }
