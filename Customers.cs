@@ -109,15 +109,7 @@ namespace Kursadarbs
             };
             filtr_txtbox.MouseLeave += ClearHoverLabels;
 
-            sortgrp_box.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible = true;
-
-                title_label.Text = "Sorting section";
-                desc_label.Text = "Use this if you want to sort data in a specific way. It sorts from Z - A by default.";
-            };
-            sortgrp_box.MouseLeave += ClearHoverLabels;
+           
 
             savech_btn.MouseEnter += (s, e) =>
             {

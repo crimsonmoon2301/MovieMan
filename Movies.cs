@@ -45,6 +45,36 @@ namespace Kursadarbs
                 dataGridView2.Columns["ID_MOVIETYPE"].Visible = false;
             if (dataGridView2.Columns.Contains("ID_MOVIE"))
                 dataGridView2.Columns["ID_MOVIE"].Visible = false;
+
+            ReplaceMovieIdWithComboBox();
+            NormalizeColumnHeaders();
+
+        }
+        private void ReplaceMovieIdWithComboBox()
+        {
+            // Remove the original column if it exists
+            if (dataGridView2.Columns.Contains("ID_MOVIE"))
+            {
+                dataGridView2.Columns.Remove("ID_MOVIE");
+            }
+
+            // Create combo box column
+            DataGridViewComboBoxColumn movieComboBox = new DataGridViewComboBoxColumn();
+            movieComboBox.Name = "ID_MOVIE";
+            movieComboBox.HeaderText = "Movie Title";
+
+            // Use Loader.MovieTable as the data source
+            movieComboBox.DataSource = Loader.MovieTable;
+            movieComboBox.DisplayMember = "NAME";         // what the user sees
+            movieComboBox.ValueMember = "ID_MOVIE";        // actual value stored in data
+
+            movieComboBox.DataPropertyName = "ID_MOVIE";   // binds to ID_MOVIE in MovieTypeTable
+
+            movieComboBox.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton; // looks clean
+            movieComboBox.FlatStyle = FlatStyle.Flat;
+
+            // Add to grid
+            dataGridView2.Columns.Insert(0, movieComboBox);
         }
 
         private void LoadMovieData()
@@ -317,12 +347,47 @@ namespace Kursadarbs
 
                 if (dataGridView1.Columns.Contains("ID_MOVIE"))
                     dataGridView1.Columns["ID_MOVIE"].Visible = false;
+                NormalizeColumnHeaders();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to refresh: " + ex.Message);
             }
         }
+        private void NormalizeColumnHeaders()
+        {
+            Dictionary<string, string> headerMappings = new Dictionary<string, string>()
+            {
+                 { "NAME", "Title" },
+                 { "DIRECTOR", "Director" },
+                 { "PRICE", "Price (EUR)" },
+                 { "ORIGIN_OF_CREATION", "Movie Origin" },
+                 { "ADDRESS", "Address" },
+                 { "CITY", "City" },
+                 { "ZIP", "ZIP Code" },
+                 { "COUNTRY", "Country" },
+                {"RELEASE_YEAR", "Release Year"},
+                {"GENRE", "Genre"},
+                {"FORMAT", "Format"},
+                {"DURATION", "Duration (Minutes)" }
+                
+        // Add more mappings as needed
+            };
 
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                if (headerMappings.ContainsKey(column.Name))
+                {
+                    column.HeaderText = headerMappings[column.Name];
+                }
+            }
+            foreach (DataGridViewColumn column in dataGridView2.Columns)
+            {
+                if (headerMappings.ContainsKey(column.Name))
+                {
+                    column.HeaderText = headerMappings[column.Name];
+                }
+            }
+        }
     }
 }

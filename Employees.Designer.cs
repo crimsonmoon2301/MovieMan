@@ -31,8 +31,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.filtr_txtbox = new System.Windows.Forms.TextBox();
             this.filtr_label = new System.Windows.Forms.Label();
-            this.hiarch_radio = new System.Windows.Forms.RadioButton();
-            this.flatlist_radio = new System.Windows.Forms.RadioButton();
             this.struct_grpbox = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.desc_label = new System.Windows.Forms.Label();
@@ -41,6 +39,7 @@
             this.add_btn = new System.Windows.Forms.Button();
             this.savech_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.struct_grpbox.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,34 +74,9 @@
             this.filtr_label.Text = "Filter: ";
             this.filtr_label.Click += new System.EventHandler(this.label1_Click);
             // 
-            // hiarch_radio
-            // 
-            this.hiarch_radio.AutoSize = true;
-            this.hiarch_radio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hiarch_radio.Location = new System.Drawing.Point(6, 46);
-            this.hiarch_radio.Name = "hiarch_radio";
-            this.hiarch_radio.Size = new System.Drawing.Size(146, 17);
-            this.hiarch_radio.TabIndex = 16;
-            this.hiarch_radio.Text = "Hierarchically (Advanced)";
-            this.hiarch_radio.UseVisualStyleBackColor = true;
-            // 
-            // flatlist_radio
-            // 
-            this.flatlist_radio.AutoSize = true;
-            this.flatlist_radio.Checked = true;
-            this.flatlist_radio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatlist_radio.Location = new System.Drawing.Point(6, 23);
-            this.flatlist_radio.Name = "flatlist_radio";
-            this.flatlist_radio.Size = new System.Drawing.Size(114, 17);
-            this.flatlist_radio.TabIndex = 17;
-            this.flatlist_radio.TabStop = true;
-            this.flatlist_radio.Text = "On flat list (Default)";
-            this.flatlist_radio.UseVisualStyleBackColor = true;
-            // 
             // struct_grpbox
             // 
-            this.struct_grpbox.Controls.Add(this.flatlist_radio);
-            this.struct_grpbox.Controls.Add(this.hiarch_radio);
+            this.struct_grpbox.Controls.Add(this.button1);
             this.struct_grpbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.struct_grpbox.Location = new System.Drawing.Point(300, 354);
             this.struct_grpbox.Name = "struct_grpbox";
@@ -199,6 +173,17 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Available information about the store staff";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(32, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Show hiarchically";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +200,6 @@
             this.Load += new System.EventHandler(this.Employees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.struct_grpbox.ResumeLayout(false);
-            this.struct_grpbox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -229,8 +213,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox filtr_txtbox;
         private System.Windows.Forms.Label filtr_label;
-        private System.Windows.Forms.RadioButton hiarch_radio;
-        private System.Windows.Forms.RadioButton flatlist_radio;
         private System.Windows.Forms.GroupBox struct_grpbox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button add_btn;
@@ -239,5 +221,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label desc_label;
         private System.Windows.Forms.Label title_label;
+        private System.Windows.Forms.Button button1;
     }
 }

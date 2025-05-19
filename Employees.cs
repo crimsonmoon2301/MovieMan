@@ -143,27 +143,6 @@ namespace Kursadarbs
                 desc_label.Text = "You can look up custom data by need.";
             };
             filtr_txtbox.MouseLeave += ClearHoverLabels;
-
-            flatlist_radio.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible= true;
-
-                title_label.Text = "Show employee list on flat list";
-                desc_label.Text = "Shows data on data view grid. Used by default.";
-            };
-            flatlist_radio.MouseLeave += ClearHoverLabels;
-
-            hiarch_radio.MouseEnter += (s, e) =>
-            {
-                title_label.Visible = true;
-                desc_label.Visible= true;
-
-                title_label.Text = "Show employee list hiarchically";
-                desc_label.Text = "Shows data in treeview. Will reload the form.";
-            };
-            hiarch_radio.MouseLeave += ClearHoverLabels;
-
             
 
             savech_btn.MouseEnter += (s, e) =>
@@ -325,6 +304,13 @@ namespace Kursadarbs
                     column.HeaderText = headerMappings[column.Name];
                 }
             }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            var form = new EmployeeHiarchy();
+            form.MdiParent = EmployeeForm.ActiveForm;
+            form.Show();
         }
     }
 }
